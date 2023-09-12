@@ -1,0 +1,335 @@
+{
+	"provider": {
+		"name": "Dota 2",
+		"appid": 570,
+		"version": 47,
+		"timestamp": 1694540370
+	},
+	"map": {
+		"name": "start",
+		"matchid": "7331930670",
+		"game_time": 473,
+		"clock_time": 445,
+		"daytime": false,
+		"nightstalker_night": false,
+		"radiant_score": 0,
+		"dire_score": 0,
+		"game_state": "DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
+		"paused": false,
+		"win_team": "none",
+		"customgamename": "",
+		"ward_purchase_cooldown": 0
+	},
+	"player": {
+		"steamid": "76561198401349803",
+		"accountid": "441084075",
+		"name": "mode: demon eater",
+		"activity": "playing",
+		"kills": 0,
+		"deaths": 0,
+		"assists": 0,
+		"last_hits": 41,
+		"denies": 5,
+		"kill_streak": 0,
+		"commands_issued": 1262,
+		"kill_list": {
+
+		},
+		"team_name": "radiant",
+		"player_slot": 1,
+		"team_slot": 0,
+		"gold": 3049,
+		"gold_reliable": 804,
+		"gold_unreliable": 2245,
+		"gold_from_hero_kills": 0,
+		"gold_from_creep_kills": 1054,
+		"gold_from_income": 669,
+		"gold_from_shared": 0,
+		"gpm": 329,
+		"xpm": 354
+	},
+	"hero": {
+		"xpos": -413,
+		"ypos": 3110,
+		"id": 35,
+		"name": "npc_dota_hero_sniper",
+		"level": 6,
+		"xp": 2637,
+		"alive": true,
+		"respawn_seconds": 0,
+		"buyback_cost": 442,
+		"buyback_cooldown": 0,
+		"health": 758,
+		"max_health": 758,
+		"health_percent": 100,
+		"mana": 225,
+		"max_mana": 411,
+		"mana_percent": 54,
+		"silenced": false,
+		"stunned": false,
+		"disarmed": false,
+		"magicimmune": false,
+		"hexed": false,
+		"muted": false,
+		"break": false,
+		"aghanims_scepter": false,
+		"aghanims_shard": false,
+		"smoked": false,
+		"has_debuff": false,
+		"talent_1": false,
+		"talent_2": false,
+		"talent_3": false,
+		"talent_4": false,
+		"talent_5": false,
+		"talent_6": false,
+		"talent_7": false,
+		"talent_8": false,
+		"attributes_level": 0
+	},
+	"abilities": {
+		"ability0": {
+			"name": "sniper_shrapnel",
+			"level": 3,
+			"can_cast": true,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false,
+			"charges": 1,
+			"max_charges": 3,
+			"charge_cooldown": 32
+		},
+		"ability1": {
+			"name": "sniper_headshot",
+			"level": 3,
+			"can_cast": false,
+			"passive": true,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability2": {
+			"name": "sniper_take_aim",
+			"level": 0,
+			"can_cast": false,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability3": {
+			"name": "sniper_assassinate",
+			"level": 0,
+			"can_cast": false,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": true
+		},
+		"ability4": {
+			"name": "plus_high_five",
+			"level": 1,
+			"can_cast": true,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability5": {
+			"name": "plus_guild_banner",
+			"level": 1,
+			"can_cast": true,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability6": {
+			"name": "seasonal_10th_anniversary_party_hat",
+			"level": 1,
+			"can_cast": true,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		}
+	},
+	"items": {
+		"slot0": {
+			"name": "empty"
+		},
+		"slot1": {
+			"name": "empty"
+		},
+		"slot2": {
+			"name": "empty"
+		},
+		"slot3": {
+			"name": "empty"
+		},
+		"slot4": {
+			"name": "empty"
+		},
+		"slot5": {
+			"name": "empty"
+		},
+		"slot6": {
+			"name": "empty"
+		},
+		"slot7": {
+			"name": "empty"
+		},
+		"slot8": {
+			"name": "empty"
+		},
+		"stash0": {
+			"name": "empty"
+		},
+		"stash1": {
+			"name": "empty"
+		},
+		"stash2": {
+			"name": "empty"
+		},
+		"stash3": {
+			"name": "empty"
+		},
+		"stash4": {
+			"name": "empty"
+		},
+		"stash5": {
+			"name": "empty"
+		},
+		"teleport0": {
+			"name": "item_tpscroll",
+			"purchaser": 0,
+			"item_level": 1,
+			"can_cast": true,
+			"cooldown": 0,
+			"passive": false,
+			"charges": 1
+		},
+		"neutral0": {
+			"name": "empty"
+		}
+	},
+	"buildings": {
+		"radiant": {
+			"dota_goodguys_tower1_top": {
+				"health": 1655,
+				"max_health": 1800
+			},
+			"dota_goodguys_tower2_top": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower3_top": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower1_mid": {
+				"health": 746,
+				"max_health": 1800
+			},
+			"dota_goodguys_tower2_mid": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower3_mid": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower1_bot": {
+				"health": 1730,
+				"max_health": 1800
+			},
+			"dota_goodguys_tower2_bot": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower3_bot": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower4_top": {
+				"health": 2600,
+				"max_health": 2600
+			},
+			"dota_goodguys_tower4_bot": {
+				"health": 2600,
+				"max_health": 2600
+			},
+			"good_rax_melee_top": {
+				"health": 2200,
+				"max_health": 2200
+			},
+			"good_rax_range_top": {
+				"health": 1300,
+				"max_health": 1300
+			},
+			"good_rax_melee_mid": {
+				"health": 2200,
+				"max_health": 2200
+			},
+			"good_rax_range_mid": {
+				"health": 1300,
+				"max_health": 1300
+			},
+			"good_rax_melee_bot": {
+				"health": 2200,
+				"max_health": 2200
+			},
+			"good_rax_range_bot": {
+				"health": 1300,
+				"max_health": 1300
+			},
+			"dota_goodguys_fort": {
+				"health": 4500,
+				"max_health": 4500
+			}
+		}
+	},
+	"draft": {
+
+	},
+	"wearables": {
+		"wearable0": 6453,
+		"wearable1": 7158,
+		"wearable2": 9652,
+		"wearable3": 9654,
+		"wearable4": 9197,
+		"wearable5": 8221,
+		"wearable6": 790,
+		"wearable7": 791,
+		"wearable8": 793,
+		"wearable9": 13816,
+		"wearable10": 647
+	},
+	"events": [
+
+	]
+	,
+	"previously": {
+		"map": {
+			"game_time": 472,
+			"clock_time": 444
+		},
+		"player": {
+			"gold": 3048,
+			"gold_reliable": 803,
+			"gold_from_income": 668,
+			"gpm": 330,
+			"xpm": 355
+		},
+		"hero": {
+			"xpos": -109,
+			"ypos": 3164,
+			"mana": 223
+		},
+		"abilities": {
+			"ability0": {
+				"charge_cooldown": 33
+			}
+		}
+	}
+}

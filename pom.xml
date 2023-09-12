@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>meiDO_TAnaka</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.mrbean355</groupId>
+            <artifactId>dota2-gsi</artifactId>
+          <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>uk.co.nichesolutions</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.22-CUSTOM</version>
+        </dependency>
+        <dependency>
+            <groupId>net.dv8tion</groupId>
+            <artifactId>JDA</artifactId>
+            <version>5.0.0-beta.10</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId></groupId>-->
+<!--            <artifactId>SLF</artifactId>-->
+<!--        </dependency>-->
+    </dependencies>
+</project>
