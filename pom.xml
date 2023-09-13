@@ -30,6 +30,43 @@
             <artifactId>JDA</artifactId>
             <version>5.0.0-beta.10</version>
         </dependency>
+
+        <!-- Dota 2 web API dependencies -->
+<!--        <dependency>-->
+<!--            <groupId>com.ibasco.agql</groupId>-->
+<!--            <artifactId>agql-lib-core</artifactId>-->
+<!--            <version>1.2.1</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>com.ibasco.agql</groupId>-->
+<!--            <artifactId>agql-dota2-webapi</artifactId>-->
+<!--            <version>1.2.1</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>com.ibasco.agql</groupId>-->
+<!--            <artifactId>agql-source-query</artifactId>-->
+<!--            <version>1.2.1</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>com.ibasco.agql</groupId>-->
+<!--            <artifactId>agql-coc-webapi</artifactId>-->
+<!--            <version>1.2.1</version>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>com.ibasco.agql</groupId>-->
+<!--            <artifactId>agql-csgo-webapi</artifactId>-->
+<!--            <version>1.2.1</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>32.1.2-jre</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId></groupId>-->
 <!--            <artifactId>SLF</artifactId>-->
