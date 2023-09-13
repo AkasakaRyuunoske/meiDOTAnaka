@@ -6,6 +6,8 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Map;
+
 public class ChloyenaBOT extends ListenerAdapter {
     static PrivateChannel privateChannel;
 
@@ -21,6 +23,10 @@ public class ChloyenaBOT extends ListenerAdapter {
     }
 
     static public void sendMessage(String message){
-        privateChannel.sendMessage(message).queue();
+        if (privateChannel != null) {
+            privateChannel.sendMessage(message).queue();
+        } else {
+            System.err.println("Cannot send message coz you suck lol fix this thing already");
+        }
     }
 }
