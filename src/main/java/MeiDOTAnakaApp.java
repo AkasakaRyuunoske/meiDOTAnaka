@@ -1,19 +1,15 @@
-import com.github.mrbean355.dota2.draft.Draft;
-import com.github.mrbean355.dota2.draft.TeamDraft;
-import com.github.mrbean355.dota2.hero.Hero;
-import com.github.mrbean355.dota2.server.GameStateServer;
+import GUI.MeiDOTAnakaFrame;
 import com.github.mrbean355.dota2.gamestate.PlayingGameState;
+import com.github.mrbean355.dota2.server.GameStateServer;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.Console;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Objects;
+import java.time.LocalDate;
 
 /**
  * Remember to enable -gamestateintegration as launch option for dota.
@@ -21,6 +17,7 @@ import java.util.Objects;
 public class MeiDOTAnakaApp {
     static JDA chloyena;
 
+    MeiDOTAnakaFrame meiDOTAnakaFrame;
     JFrame frame;
     JLabel GPM_label;
     JLabel XPM_label;
@@ -30,6 +27,17 @@ public class MeiDOTAnakaApp {
     JLabel actions_label;
     public static void main(String[] args) {
         System.out.println("Application started");
+
+//        SourceQueryOptions options = SourceQueryOptions.builder()
+//                .option(GeneralOptions.CONNECTION_POOLING, false) //disable connection pooling for source queries
+//                .option(ConnectOptions.FAILSAFE_RETRY_DELAY, 5000L) //change retry duration to 5 seconds if connection to the game server fails
+//                .option(FailsafeOptions.FAILSAFE_RATELIMIT_ENABLED, true) //turn on rate limiting for server queries
+//                .option(FailsafeOptions.FAILSAFE_RATELIMIT_TYPE, RateLimitType.SMOOTH) //change rate limit strategy for source queries
+//                .option(GeneralOptions.THREAD_EXECUTOR_SERVICE, customExecutor) //provide a custom executor service
+//                .option(GeneralOptions.READ_TIMEOUT, 5000) //change socket read timeout duration to 5 seconds
+//                .build();
+//        SourceQueryClient client = new SourceQueryClient(options);
+
         new MeiDOTAnakaApp().run();
     }
 
@@ -38,6 +46,10 @@ public class MeiDOTAnakaApp {
      * When Dota sends us a new game state, we can check various properties.
      */
     private void run() {
+        meiDOTAnakaFrame = new MeiDOTAnakaFrame();
+
+        // OLD CRINGE FRAME
+        // Deprecated
         frame = new JFrame("Yay mokson is not that bad )0)");
         GPM_label = new JLabel();
         XPM_label = new JLabel();
@@ -68,7 +80,9 @@ public class MeiDOTAnakaApp {
 
         frame.setVisible(true);
 
-        chloyena = JDABuilder.createDefault("")
+        // Till here
+
+        chloyena = JDABuilder.createDefault("MTE0NTc4MjQ0MjM0NzczMzAzMw.Gq5MId.n_MCpegr2W1WIkdkcrM3EmgpIoPr6DHMoxUIWE")
                 .setActivity(Activity.competing("With life"))
                 .addEventListeners(new ChloyenaBOT())
                 .build();
@@ -128,9 +142,21 @@ public class MeiDOTAnakaApp {
                 }
 
                 if (newState.getHero() != null) {
-                    if (newState.getHero().getLevel() > previousState.getHero().getLevel()) {
-                        System.out.println("Yay you got new lvl");
-                        ChloyenaBOT.sendMessage("Yay you got new lvl! Now you are " + newState.getHero().getLevel());
+                    if (newState.getHero().getLevel() > 1) {
+                        if (newState.getHero().getLevel() > previousState.getHero().getLevel()) {
+                            System.out.println("Yay you got new lvl");
+
+                            meiDOTAnakaFrame.updateHeroMaxHP(newState.getHero().getMaxHealth());
+                            meiDOTAnakaFrame.updateHeroMaxMP(newState.getHero().getMaxMana());
+                            meiDOTAnakaFrame.updateHeroLvl(newState.getHero().getLevel());
+
+                            ChloyenaBOT.sendMessage("Yay you got new lvl! Now you are " + newState.getHero().getLevel());
+                        }
+                    }
+
+                    if (newState.getHero().isAlive()){
+                        meiDOTAnakaFrame.updateHeroCurrentHP(newState.getHero().getHealth());
+                        meiDOTAnakaFrame.updateHeroCurrentMP(newState.getHero().getMana());
                     }
                 }
                 System.out.println("Kill list: " + newState.getPlayer().getKillList());
@@ -155,7 +181,7 @@ public class MeiDOTAnakaApp {
                 System.out.println("getRadiantScore(): " + newState.getMap().getRadiantScore());
 
                 System.out.println(newState.getHero().getAttributesLevel());
-                System.out.println(newState.getHero());
+//                System.out.println(newState.getHero().);
 
                 System.out.println(newState.getPlayer());
                 System.out.println(newState.getMap());
@@ -167,7 +193,14 @@ public class MeiDOTAnakaApp {
                 gold_from_kills_label.setText("Gold from kills is: " + newState.getPlayer().getGoldFromHeroKills());
                 XPM_label.setText("Your GPM is: " + newState.getPlayer().getXpm());
                 actions_label.setText("Your GPM is: " + newState.getPlayer().getCommandsIssued());
+                System.out.println(newState.getPlayer().getGold());
 
+                meiDOTAnakaFrame.updatePanels(
+                                    String.valueOf(newState.getPlayer().getCommandsIssued()),
+                                    String.valueOf(newState.getPlayer().getGpm()),
+                                    String.valueOf(newState.getPlayer().getXpm()),
+                                    String.valueOf(newState.getPlayer().getGold())
+                                    );
             }
         }
 
@@ -177,7 +210,7 @@ public class MeiDOTAnakaApp {
 
     private void writeErrorLog(String json) {
         try {
-            FileWriter writer = new FileWriter("error.json");
+            FileWriter writer = new FileWriter("error_" + LocalDate.now() + ".json");
             writer.write(json);
             writer.close();
         } catch (IOException e) {
