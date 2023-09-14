@@ -47,42 +47,43 @@ public class MeiDOTAnakaApp {
      */
     private void run() {
         meiDOTAnakaFrame = new MeiDOTAnakaFrame();
+        meiDOTAnakaFrame.setVisible(false);
 
         // OLD CRINGE FRAME
         // Deprecated
-        frame = new JFrame("Yay mokson is not that bad )0)");
-        GPM_label = new JLabel();
-        XPM_label = new JLabel();
-        hero_name_label = new JLabel();
-        gold_from_creeps_label = new JLabel();
-        gold_from_kills_label = new JLabel();
-        actions_label = new JLabel();
-
-        GPM_label.setText("Not yet started");
-        XPM_label.setText("Not yet started");
-        hero_name_label.setText("Not yet started");
-        gold_from_creeps_label.setText("Not yet started");
-        gold_from_kills_label.setText("Not yet started");
-        actions_label.setText("Not yet started");
-
-        frame.setBounds(0,0,500,500);
-        frame.setLayout(new GridLayout(3,3));
-
-        frame.add(hero_name_label);
-
-        frame.add(GPM_label);
-        frame.add(gold_from_creeps_label);
-        frame.add(gold_from_kills_label);
-
-        frame.add(XPM_label);
-
-        frame.add(actions_label);
-
-        frame.setVisible(true);
+//        frame = new JFrame("Yay mokson is not that bad )0)");
+//        GPM_label = new JLabel();
+//        XPM_label = new JLabel();
+//        hero_name_label = new JLabel();
+//        gold_from_creeps_label = new JLabel();
+//        gold_from_kills_label = new JLabel();
+//        actions_label = new JLabel();
+//
+//        GPM_label.setText("Not yet started");
+//        XPM_label.setText("Not yet started");
+//        hero_name_label.setText("Not yet started");
+//        gold_from_creeps_label.setText("Not yet started");
+//        gold_from_kills_label.setText("Not yet started");
+//        actions_label.setText("Not yet started");
+//
+//        frame.setBounds(0,0,500,500);
+//        frame.setLayout(new GridLayout(3,3));
+//
+//        frame.add(hero_name_label);
+//
+//        frame.add(GPM_label);
+//        frame.add(gold_from_creeps_label);
+//        frame.add(gold_from_kills_label);
+//
+//        frame.add(XPM_label);
+//
+//        frame.add(actions_label);
+//
+//        frame.setVisible(true);
 
         // Till here
 
-        chloyena = JDABuilder.createDefault("MTE0NTc4MjQ0MjM0NzczMzAzMw.Gq5MId.n_MCpegr2W1WIkdkcrM3EmgpIoPr6DHMoxUIWE")
+        chloyena = JDABuilder.createDefault("MTE0NTc4MjQ0MjM0NzczMzAzMw.GWS3za.liacSnqHC6p-fZX9R6zjtFwWZjOK59AaFkoAAA")
                 .setActivity(Activity.competing("With life"))
                 .addEventListeners(new ChloyenaBOT())
                 .build();
