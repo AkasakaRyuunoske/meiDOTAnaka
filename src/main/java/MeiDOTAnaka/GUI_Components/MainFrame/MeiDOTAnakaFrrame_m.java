@@ -17,7 +17,7 @@ public class MeiDOTAnakaFrrame_m extends JFrame {
         setSize(1080, 720);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new GridBagLayout());
-        setTitle("MeiDOTAnata - Your cringe assistant wirten by cringe ukrainian refugee");
+        setTitle("MeiDOTAnata - Your cringe assistant written by cringe ukrainian refugee");
 
         selected_panel = new Selected_Panel();
         state_panel = new State_Panel();
@@ -29,15 +29,8 @@ public class MeiDOTAnakaFrrame_m extends JFrame {
 
         add(buttons_panel, gridBagConstraints);
 
-        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = GridBagConstraints.NORTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.1;
-
-        state_panel.add(selected_panel, gridBagConstraints);
-
         gridBagConstraints.fill = GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0; // Panel takes 70% of the screen width
+        gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
 
         add(state_panel, gridBagConstraints);

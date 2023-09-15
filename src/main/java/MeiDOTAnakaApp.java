@@ -1,4 +1,3 @@
-import GUI.MeiDOTAnakaFrame;
 import com.github.mrbean355.dota2.gamestate.PlayingGameState;
 import com.github.mrbean355.dota2.server.GameStateServer;
 import net.dv8tion.jda.api.JDA;
@@ -6,18 +5,17 @@ import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 
 /**
  * Remember to enable -gamestateintegration as launch option for dota.
- * */
+ */
 public class MeiDOTAnakaApp {
     static JDA chloyena;
 
-    MeiDOTAnakaFrame meiDOTAnakaFrame;
+//    MeiDOTAnakaFrame meiDOTAnakaFrame;
     JFrame frame;
     JLabel GPM_label;
     JLabel XPM_label;
@@ -25,6 +23,7 @@ public class MeiDOTAnakaApp {
     JLabel gold_from_creeps_label;
     JLabel gold_from_kills_label;
     JLabel actions_label;
+
     public static void main(String[] args) {
         System.out.println("Application started");
 
@@ -46,8 +45,8 @@ public class MeiDOTAnakaApp {
      * When Dota sends us a new game state, we can check various properties.
      */
     private void run() {
-        meiDOTAnakaFrame = new MeiDOTAnakaFrame();
-        meiDOTAnakaFrame.setVisible(false);
+//        meiDOTAnakaFrame = new MeiDOTAnakaFrame();
+//        meiDOTAnakaFrame.setVisible(false);
 
         // OLD CRINGE FRAME
         // Deprecated
@@ -138,7 +137,7 @@ public class MeiDOTAnakaApp {
                     System.out.println("You died, too bad :(");
                 }
 
-                if (newState.getPlayer().getGoldFromCreepKills() > previousState.getPlayer().getGoldFromCreepKills()){
+                if (newState.getPlayer().getGoldFromCreepKills() > previousState.getPlayer().getGoldFromCreepKills()) {
                     System.out.println("You got " + newState.getPlayer().getGoldFromCreepKills() + " from killing creeps");
                 }
 
@@ -147,17 +146,17 @@ public class MeiDOTAnakaApp {
                         if (newState.getHero().getLevel() > previousState.getHero().getLevel()) {
                             System.out.println("Yay you got new lvl");
 
-                            meiDOTAnakaFrame.updateHeroMaxHP(newState.getHero().getMaxHealth());
-                            meiDOTAnakaFrame.updateHeroMaxMP(newState.getHero().getMaxMana());
-                            meiDOTAnakaFrame.updateHeroLvl(newState.getHero().getLevel());
+//                            meiDOTAnakaFrame.updateHeroMaxHP(newState.getHero().getMaxHealth());
+//                            meiDOTAnakaFrame.updateHeroMaxMP(newState.getHero().getMaxMana());
+//                            meiDOTAnakaFrame.updateHeroLvl(newState.getHero().getLevel());
 
                             ChloyenaBOT.sendMessage("Yay you got new lvl! Now you are " + newState.getHero().getLevel());
                         }
                     }
 
-                    if (newState.getHero().isAlive()){
-                        meiDOTAnakaFrame.updateHeroCurrentHP(newState.getHero().getHealth());
-                        meiDOTAnakaFrame.updateHeroCurrentMP(newState.getHero().getMana());
+                    if (newState.getHero().isAlive()) {
+//                        meiDOTAnakaFrame.updateHeroCurrentHP(newState.getHero().getHealth());
+//                        meiDOTAnakaFrame.updateHeroCurrentMP(newState.getHero().getMana());
                     }
                 }
                 System.out.println("Kill list: " + newState.getPlayer().getKillList());
@@ -196,12 +195,12 @@ public class MeiDOTAnakaApp {
                 actions_label.setText("Your GPM is: " + newState.getPlayer().getCommandsIssued());
                 System.out.println(newState.getPlayer().getGold());
 
-                meiDOTAnakaFrame.updatePanels(
-                                    String.valueOf(newState.getPlayer().getCommandsIssued()),
-                                    String.valueOf(newState.getPlayer().getGpm()),
-                                    String.valueOf(newState.getPlayer().getXpm()),
-                                    String.valueOf(newState.getPlayer().getGold())
-                                    );
+//                meiDOTAnakaFrame.updatePanels(
+//                        String.valueOf(newState.getPlayer().getCommandsIssued()),
+//                        String.valueOf(newState.getPlayer().getGpm()),
+//                        String.valueOf(newState.getPlayer().getXpm()),
+//                        String.valueOf(newState.getPlayer().getGold())
+//                );
             }
         }
 

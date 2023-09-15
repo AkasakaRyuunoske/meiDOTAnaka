@@ -11,7 +11,7 @@ meiDOTAnaka
 		|
 		|	|---+ Selected_Component
 		|		|---# Selected_Panel.java
-		|		|---# Selected_Lable.java
+		|		|---# Selected_Label.java
 		|
 		|	|---+ MainPanel_Component
 		|		|---# State_Panel.java
@@ -39,7 +39,7 @@ meiDOTAnaka
 		|		|---+ DisableTime_GraphPanel
 		|			|--# DisableTime_GraphPanel.java
 		|
-		|   |---+ Lables
+		|   |---+ Labels
 		|
 		|
 		|---+ Post_Game

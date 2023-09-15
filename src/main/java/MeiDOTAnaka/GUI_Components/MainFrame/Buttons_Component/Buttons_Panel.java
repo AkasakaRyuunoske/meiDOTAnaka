@@ -24,5 +24,11 @@ public class Buttons_Panel extends JPanel {
         add(graphs_button);
         add(players_button);
         add(postGame_button);
+
+        add(new JLabel());
+        add(new JLabel());
+        add(new JLabel());
+        add(new JLabel());
+        add(new JLabel("Ping: ")); //#todo implement ping module here
     }
 }
