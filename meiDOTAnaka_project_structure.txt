@@ -1,127 +1,117 @@
-meiDOTAnaka 
-	|---+ GUI_Components
-		|---+ MainFrame
-		|	|---+ Buttons_Component
-		|		|---# Buttons_Panel.java
-		|		|---# Graphs_Button.java
-		|		|---# PostGame_Button.java
-		|		|---# Players_Button.java
-		|		|---# Config_Button.java
-		|		|---# CurrentGame_Button.java
-		|
-		|	|---+ Selected_Component
-		|		|---# Selected_Panel.java
-		|		|---# Selected_Label.java
-		|
-		|	|---+ MainPanel_Component
-		|		|---# State_Panel.java
-		|		
-		|---+ Graphs
-		|   |---+ Panels
-		|		|---+ XPM_GraphPanel
-		|			|--# XPM_GraphPanel.java
-		|
-		|		|---+ APM_GraphPanel
-		|			|--# APM_GraphPanel.java
-		|
-		|		|---+ GPM_GraphPanel
-		|			|--# GPM_GraphPanel.java
-		|
-		|		|---+ DPS_GraphPanel
-		|			|--# DPS_GraphPanel.java
-		|
-		|		|---+ Creeps_GraphPanel
-		|			|--# Creeps_GraphPanel.java
-		|
-		|		|---+ Kills_GraphPanel
-		|			|--# Kills_GraphPanel.java
-		|
-		|		|---+ DisableTime_GraphPanel
-		|			|--# DisableTime_GraphPanel.java
-		|
-		|   |---+ Labels
-		|
-		|
-		|---+ Post_Game
-		|   |---+ Panels
-		|   |---+ Labels
-		|
-		|
-		|---+ Players
-		|   |---+ Panels
-		|   |---+ Labels
-		|
-		|
-		|---+ Config
-		|   |---+ Panels
-		|   |---+ Labels
-		|		# config.cringe
-		|
-		|
-		|---+ Current_Game
-		|   |---+ Panels
-		|		|---+ HeroInfoPanel
-		|			|---# HeroInfoPanel.java
-		|			|---# HeroMP_ProgressBarPanel.java
-		|			|---# HeroHP_ProgressBarPanel.java
-		|
-		|			|---+ HeroInventoryPanel
-		|				|---# HeroInventoryPanel.java
-		|
-		|		|---+ PlayerInfoPanel
-		|			|---# PlayerInfoPanel.java
-		|			|---# GoldEarnedFromPanel.java
-		|
-		|-------+ Labels
-		|		|---+ HeroInfoLabels
-		|			|---# Lvl_Label.java
-		|			|---# Name_Label.java
-		|			|---# AghanimShard_Label.java
-		|			|---# AghanimScepter_Label.java
-		|
-		|		|---+ PlayerInfoLabels
-		|			|---+ GoldEarnedFromLabels
-		|				|---# GoldEarnedFromLabel.java
-		|				|---# GoldEarnedFrom_Creeps.java
-		|				|---# GoldEarnedFrom_Kills.java
-		|				|---# GoldEarnedFrom_Income.java
-		|
-		|			|---+ HeroInventoryPanel
-		|				|---# HeroItemLabel.java
-		|
-		|			|---# XPM_Label.java
-		|			|---# APM_Label.java
-		|			|---# GPM_Label.java
-		|			|---# DPS_Label.java
-		|			|---# XPM_Label.java
-		|			|---# XPM_Label.java
-
-	|---+ Services
-	|   |---+ Graphs
-	|		|---+ XPM_Graph
-	|		|---+ APM_Graph
-	|		|---+ GPM_Graph
-	|		|---+ DPS_Graph
-	|		|---+ Creeps_Graph
-	|		|---+ Kills_Graph
-	|		|---+ DisableTime_Graph
-
-	|---+ Resources 
-	|	|---+ Images
-	|		|---+ Items
-	|			|---+ NeutralItems
-	|			|---+ DamageItems
-	|			|---+ DefenseItems
-	|				|---# blink_dagger.png
-	|				|---# arcane_blink_dagger.png
-	|				|---# agility_blink_dagger.png
-	|				|---# overhelming_blink_dagger.png
-	|			|---+ Auras
-	|		|---+ Heroes
-
-	|---+ Dicsord
-	|	|----# ChloyenaBOT.java
-	|	|----# OnMessageListener.java
-	|	|----# OnReactionListener.java
-
-	MeiDOTAnaka.java
+|---+ main
+    |---+ java
+        |---+ MeiDOTAnaka
+            |---+ GUI_Components
+            |    |---+ Config
+            |        |---+ Config_Panel.java
+            |        |---+ placeholder.txt
+            |
+            |    |---+ CurrentGame
+            |        |---+ CurrentGame_Panel.java
+            |        |---+ Labels
+            |            |---+ HeroInfo_Labels
+            |                |---+ HeroAghanimScepter_Label.java
+            |                |---+ HeroAghanimShard_Label.java
+            |                |---+ HeroHP_ProgressBar.java
+            |                |---+ HeroInfo_Label.java
+            |                |---+ HeroLvl_Label.java
+            |                |---+ HeroMP_ProgressBar.java
+            |                |---+ HeroName_Label.java
+            |
+            |            |---+ PlayerInfo_Labels
+            |                |---+ APM_Label.java
+            |                |---+ GPM_Label.java
+            |                |---+ Networth_Label.java
+            |                |---+ PlayerInfo_Label.java
+            |                |---+ XPM_Label.java
+            |
+            |
+            |        |---+ Panels
+            |            |---+ DraftInfo_Panel.java
+            |            |---+ HeroInfo_Panel.java
+            |            |---+ PlayerInfo_Panel.java
+            |            |---+ RadiantDraftInfo_Panel.java
+            |
+            |        |---+ placeholder.txt
+            |
+            |    |---+ Graphs
+            |        |---+ Graphs_Panel.java
+            |        |---+ placeholder.txt
+            |
+            |    |---+ MainFrame
+            |        |---+ Buttons_Component
+            |            |---+ Buttons_Panel.java
+            |            |---+ Config_Button.java
+            |            |---+ CurrentGame_Button.java
+            |            |---+ Graphs_Button.java
+            |            |---+ MeiDOTAnaka_Button.java
+            |            |---+ Players_Button.java
+            |            |---+ PostGame_Button.java
+            |
+            |        |---+ MainPanel
+            |            |---+ State_Panel.java
+            |
+            |        |---+ MeiDOTAnakaFrrame_m.java
+            |        |---+ Selected_Component
+            |            |---+ Selected_Label.java
+            |            |---+ Selected_Panel.java
+            |
+            |
+            |    |---+ placeholder.txt
+            |    |---+ Players
+            |        |---+ placeholder.txt
+            |        |---+ Players_Panel.java
+            |
+            |    |---+ PostGame
+            |        |---+ Labels
+            |            |---+ HeroImportantStatsLabels
+            |                |---+ APM_Stat_Label.java
+            |                |---+ Creeps_Stat_Label.java
+            |                |---+ DPM_Stat_Label.java
+            |                |---+ GPM_Stat_Label.java
+            |                |---+ KDA_Stat_Label.java
+            |                |---+ Networth_Stat_Label.java
+            |                |---+ XPM_Stat_Label.java
+            |
+            |            |---+ HeroInventoryItem_Label.java
+            |
+            |        |---+ Panels
+            |            |---+ HeroImportantStatsPanel
+            |                |---+ HeroImportantStats_Panel.java
+            |                |---+ HeroStats_Panel.java
+            |                |---+ Hero_Panel.java
+            |
+            |            |---+ HeroInventory_Panel.java
+            |            |---+ HeroKillsStats_Panel.java
+            |
+            |        |---+ placeholder.txt
+            |        |---+ PostGame_Panel.java
+            |
+            |
+            |---#> MeiDOTAnakaApp_v2.java
+            ||---+ Resources
+            |    |---+ Images
+            |        |---+ shivallan_imba_hero_omg_volvo_fix_please.png
+            |
+            |    |---+ placeholder.txt
+            |
+            ||---+ Services
+            |    |---+ Configuration
+            |
+            |    |---+ Discord
+            |        |---+ ChloyenaBOT.java
+            |
+            |    |---+ Dota2RestAPIs
+            |        |---+ Dota2MatchAPI_570
+            |            |---+ GetMatchHistory.java
+            |
+            |
+            |    |---+ GSS
+            |        |---+ GSS.java
+            |        |---+ InGameEvents
+            |
+            |
+            |    |---+ placeholder.txt
+            |
+            |
+        |---#> MeiDOTAnakaApp.java
