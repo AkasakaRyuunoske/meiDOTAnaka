@@ -23,16 +23,20 @@ public class Players_Button extends JButton implements ActionListener, MeiDOTAna
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
-            System.out.println("Players Button Was cliked");
+            SwingUtilities.invokeLater(() -> {
+                System.out.println("Players Button Was cliked");
 
-            selectedPanel.selectedLabel.setText("Players");
+                selectedPanel.selectedLabel.setText("Players");
 
-            state_panel.remove(state_panel.current_panel);
-            state_panel.add(state_panel.players_panel, state_panel.gridBagConstraints);
-            state_panel.current_panel = state_panel.players_panel;
+                state_panel.remove(state_panel.current_panel);
+                state_panel.add(state_panel.players_panel, state_panel.gridBagConstraints);
+                state_panel.current_panel = state_panel.players_panel;
 
-            meiDOTAnakaFrame.revalidate();
-            System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
+                meiDOTAnakaFrame.revalidate();
+                meiDOTAnakaFrame.repaint();
+                System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
+                System.out.println("Current state: " + state_panel.current_panel.toString());
+            });
         }
     }
 

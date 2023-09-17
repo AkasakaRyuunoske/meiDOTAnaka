@@ -23,16 +23,20 @@ public class Graphs_Button  extends JButton implements ActionListener, MeiDOTAna
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this){
-            System.out.println("Graphs Button Was cliked");
-            selectedPanel.selectedLabel.setText("Graphs");
+            SwingUtilities.invokeLater(() -> {
+                System.out.println("Graphs Button Was cliked");
+                selectedPanel.selectedLabel.setText("Graphs");
 
-            state_panel.remove(state_panel.current_panel);
-            state_panel.add(state_panel.graphs_panel, state_panel.gridBagConstraints);
-            state_panel.current_panel = state_panel.graphs_panel;
+                state_panel.remove(state_panel.current_panel);
+                state_panel.add(state_panel.graphs_panel, state_panel.gridBagConstraints);
+                state_panel.current_panel = state_panel.graphs_panel;
 
-            meiDOTAnakaFrame.revalidate();
+                meiDOTAnakaFrame.revalidate();
+                meiDOTAnakaFrame.repaint();
 
-            System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
+                System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
+                System.out.println("Current state: " + state_panel.current_panel.toString());
+            });
         }
     }
 

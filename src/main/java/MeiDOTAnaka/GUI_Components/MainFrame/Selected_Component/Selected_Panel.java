@@ -12,4 +12,8 @@ public class Selected_Panel extends JPanel {
 
         add(selectedLabel);
     }
+
+    public void updateSelectionText(String newSelectionText){
+        selectedLabel.setText(newSelectionText);
+    }
 }

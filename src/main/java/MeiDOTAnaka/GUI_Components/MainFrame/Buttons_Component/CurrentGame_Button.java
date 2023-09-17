@@ -5,6 +5,7 @@ import MeiDOTAnaka.GUI_Components.MainFrame.MeiDOTAnakaFrrame_m;
 import MeiDOTAnaka.GUI_Components.MainFrame.Selected_Component.Selected_Panel;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -26,6 +27,8 @@ public class CurrentGame_Button  extends JButton implements ActionListener, MeiD
             System.out.println("Current Game Button Was cliked");
 
             selectedPanel.selectedLabel.setText("Current Game");
+            selectedPanel.setBackground(Color.GRAY);
+            selectedPanel.repaint();
 
             state_panel.remove(state_panel.current_panel);
             state_panel.add(state_panel.currentGame_panel, state_panel.gridBagConstraints);
@@ -33,6 +36,7 @@ public class CurrentGame_Button  extends JButton implements ActionListener, MeiD
 
             meiDOTAnakaFrame.revalidate();
             System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
+            System.out.println("Current state: " + state_panel.current_panel.toString());
         }
     }
 
