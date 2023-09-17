@@ -1,5 +1,9 @@
 package MeiDOTAnaka.GUI_Components.MainFrame.Buttons_Component;
 
+import MeiDOTAnaka.GUI_Components.MainFrame.MainPanel.State_Panel;
+import MeiDOTAnaka.GUI_Components.MainFrame.MeiDOTAnakaFrrame_m;
+import MeiDOTAnaka.GUI_Components.MainFrame.Selected_Component.Selected_Panel;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -30,5 +34,13 @@ public class Buttons_Panel extends JPanel {
         add(new JLabel());
         add(new JLabel());
         add(new JLabel("Ping: ")); //#todo implement ping module here
+    }
+
+    public void setButtonsContext(MeiDOTAnakaFrrame_m context_frame, Selected_Panel context_panel, State_Panel state_panel) {
+        config_button.setContext     (context_frame, context_panel, state_panel);
+        currentGame_button.setContext(context_frame, context_panel, state_panel);
+        graphs_button.setContext     (context_frame, context_panel, state_panel);
+        players_button.setContext    (context_frame, context_panel, state_panel);
+        postGame_button.setContext   (context_frame, context_panel, state_panel);
     }
 }

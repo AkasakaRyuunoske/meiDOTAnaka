@@ -37,4 +37,8 @@ public class MeiDOTAnakaFrrame_m extends JFrame {
 
         setVisible(true);
     }
+
+    public void setButtonsContext(MeiDOTAnakaFrrame_m context_frame){
+        buttons_panel.setButtonsContext(context_frame, selected_panel, state_panel);
+    }
 }

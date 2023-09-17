@@ -11,15 +11,17 @@ import javax.swing.*;
 import java.awt.*;
 
 public class State_Panel extends JPanel {
-    Config_Panel config_panel;
-    PostGame_Panel postGame_panel;
-    Players_Panel players_panel;
-    Graphs_Panel graphs_panel;
-    CurrentGame_Panel currentGame_panel;
+    public Config_Panel config_panel;
+    public PostGame_Panel postGame_panel;
+    public Players_Panel players_panel;
+    public Graphs_Panel graphs_panel;
+    public CurrentGame_Panel currentGame_panel;
 
-    Selected_Panel selected_panel;
+    public Selected_Panel selected_panel;
 
-    GridBagConstraints gridBagConstraints;
+    public JPanel current_panel;
+
+    public GridBagConstraints gridBagConstraints;
 
     public State_Panel(){
         gridBagConstraints = new GridBagConstraints();
@@ -58,5 +60,6 @@ public class State_Panel extends JPanel {
         gridBagConstraints.gridy = 2;
 
         add(currentGame_panel, gridBagConstraints);
+        current_panel = currentGame_panel;
     }
 }

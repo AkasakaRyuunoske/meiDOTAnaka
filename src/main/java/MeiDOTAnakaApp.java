@@ -1,3 +1,4 @@
+import MeiDOTAnaka.GUI_Components.MainFrame.MeiDOTAnakaFrrame_m;
 import com.github.mrbean355.dota2.gamestate.PlayingGameState;
 import com.github.mrbean355.dota2.server.GameStateServer;
 import net.dv8tion.jda.api.JDA;
@@ -16,13 +17,14 @@ public class MeiDOTAnakaApp {
     static JDA chloyena;
 
 //    MeiDOTAnakaFrame meiDOTAnakaFrame;
-    JFrame frame;
+    MeiDOTAnakaFrrame_m meiDOTAnakaFrrame_m;
     JLabel GPM_label;
     JLabel XPM_label;
     JLabel hero_name_label;
     JLabel gold_from_creeps_label;
     JLabel gold_from_kills_label;
     JLabel actions_label;
+
 
     public static void main(String[] args) {
         System.out.println("Application started");
@@ -45,6 +47,8 @@ public class MeiDOTAnakaApp {
      * When Dota sends us a new game state, we can check various properties.
      */
     private void run() {
+        meiDOTAnakaFrrame_m = new MeiDOTAnakaFrrame_m();
+        meiDOTAnakaFrrame_m.setButtonsContext(meiDOTAnakaFrrame_m);
 //        meiDOTAnakaFrame = new MeiDOTAnakaFrame();
 //        meiDOTAnakaFrame.setVisible(false);
 
@@ -82,10 +86,10 @@ public class MeiDOTAnakaApp {
 
         // Till here
 
-        chloyena = JDABuilder.createDefault("MTE0NTc4MjQ0MjM0NzczMzAzMw.GWS3za.liacSnqHC6p-fZX9R6zjtFwWZjOK59AaFkoAAA")
-                .setActivity(Activity.competing("With life"))
-                .addEventListeners(new ChloyenaBOT())
-                .build();
+//        chloyena = JDABuilder.createDefault("MTE0NTc4MjQ0MjM0NzczMzAzMw.GWS3za.liacSnqHC6p-fZX9R6zjtFwWZjOK59AaFkoAAA")
+//                .setActivity(Activity.competing("With life"))
+//                .addEventListeners(new ChloyenaBOT())
+//                .build();
 
         System.out.println("Me too");
         // Create a server and add various listeners for game state updates.
