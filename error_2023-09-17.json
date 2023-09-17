@@ -1,0 +1,250 @@
+{
+	"provider": {
+		"name": "Dota 2",
+		"appid": 570,
+		"version": 47,
+		"timestamp": 1694947664
+	},
+	"map": {
+		"name": "hero_demo_main",
+		"matchid": "0",
+		"game_time": 111,
+		"clock_time": 108,
+		"daytime": true,
+		"nightstalker_night": false,
+		"radiant_score": 0,
+		"dire_score": 0,
+		"game_state": "DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
+		"paused": false,
+		"win_team": "none",
+		"customgamename": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\dota 2 beta\\game\\dota_addons\\hero_demo",
+		"ward_purchase_cooldown": 0
+	},
+	"player": {
+		"steamid": "76561198401349803",
+		"accountid": "441084075",
+		"name": "mode: demon eater",
+		"activity": "playing",
+		"kills": 0,
+		"deaths": 0,
+		"assists": 0,
+		"last_hits": 0,
+		"denies": 0,
+		"kill_streak": 0,
+		"commands_issued": 37,
+		"kill_list": {
+
+		},
+		"team_name": "radiant",
+		"player_slot": 0,
+		"team_slot": 0,
+		"gold": 99999,
+		"gold_reliable": 0,
+		"gold_unreliable": 99999,
+		"gold_from_hero_kills": 0,
+		"gold_from_creep_kills": 0,
+		"gold_from_income": 163,
+		"gold_from_shared": 0,
+		"gpm": 60409,
+		"xpm": 157
+	},
+	"hero": {
+		"xpos": -1746,
+		"ypos": 310,
+		"id": 113,
+		"name": "npc_dota_hero_arc_warden",
+		"level": 2,
+		"xp": 285,
+		"alive": true,
+		"respawn_seconds": 0,
+		"buyback_cost": 8253,
+		"buyback_cooldown": 0,
+		"health": 868,
+		"max_health": 868,
+		"health_percent": 100,
+		"mana": 507,
+		"max_mana": 507,
+		"mana_percent": 100,
+		"silenced": false,
+		"stunned": false,
+		"disarmed": false,
+		"magicimmune": false,
+		"hexed": false,
+		"muted": false,
+		"break": false,
+		"aghanims_scepter": false,
+		"aghanims_shard": false,
+		"smoked": false,
+		"has_debuff": false,
+		"talent_1": false,
+		"talent_2": false,
+		"talent_3": false,
+		"talent_4": false,
+		"talent_5": false,
+		"talent_6": false,
+		"talent_7": false,
+		"talent_8": false,
+		"attributes_level": 0
+	},
+	"abilities": {
+		"ability0": {
+			"name": "arc_warden_flux",
+			"level": 0,
+			"can_cast": false,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability1": {
+			"name": "arc_warden_magnetic_field",
+			"level": 0,
+			"can_cast": false,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability2": {
+			"name": "arc_warden_spark_wraith",
+			"level": 0,
+			"can_cast": false,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability3": {
+			"name": "arc_warden_tempest_double",
+			"level": 0,
+			"can_cast": false,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": true
+		},
+		"ability4": {
+			"name": "plus_high_five",
+			"level": 1,
+			"can_cast": true,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability5": {
+			"name": "plus_guild_banner",
+			"level": 1,
+			"can_cast": true,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		}
+	},
+	"items": {
+		"slot0": {
+			"name": "item_manta",
+			"purchaser": 0,
+			"item_level": 1,
+			"can_cast": true,
+			"cooldown": 0,
+			"passive": false
+		},
+		"slot1": {
+			"name": "empty"
+		},
+		"slot2": {
+			"name": "empty"
+		},
+		"slot3": {
+			"name": "empty"
+		},
+		"slot4": {
+			"name": "empty"
+		},
+		"slot5": {
+			"name": "empty"
+		},
+		"slot6": {
+			"name": "empty"
+		},
+		"slot7": {
+			"name": "empty"
+		},
+		"slot8": {
+			"name": "empty"
+		},
+		"stash0": {
+			"name": "empty"
+		},
+		"stash1": {
+			"name": "empty"
+		},
+		"stash2": {
+			"name": "empty"
+		},
+		"stash3": {
+			"name": "empty"
+		},
+		"stash4": {
+			"name": "empty"
+		},
+		"stash5": {
+			"name": "empty"
+		},
+		"teleport0": {
+			"name": "item_tpscroll",
+			"purchaser": 0,
+			"item_level": 1,
+			"can_cast": true,
+			"cooldown": 0,
+			"passive": false,
+			"charges": 1
+		},
+		"neutral0": {
+			"name": "empty"
+		}
+	},
+	"buildings": {
+		"radiant": {
+			"dota_goodguys_tower1_mid": {
+				"health": 1765,
+				"max_health": 1800
+			}
+		}
+	},
+	"draft": {
+
+	},
+	"wearables": {
+		"wearable0": 13358,
+		"wearable1": 13535,
+		"wearable2": 13357,
+		"wearable3": 13356,
+		"wearable4": 12541,
+		"wearable5": 601,
+		"wearable6": 792,
+		"wearable7": 13816,
+		"wearable8": 647
+	},
+	"events": [
+
+	]
+	,
+	"previously": {
+		"map": {
+			"game_time": 110,
+			"clock_time": 107
+		},
+		"player": {
+			"gold_from_income": 161,
+			"gpm": 61016,
+			"xpm": 159
+		},
+		"hero": {
+			"xpos": -1829,
+			"ypos": 451
+		}
+	}
+}
