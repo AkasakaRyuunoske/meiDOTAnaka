@@ -16,6 +16,6 @@ public class HeroImportantStats_Panel extends JPanel {
 
         add(hero_panel);
         add(heroStats_panel);
-
+        hero_panel.hero_image.repaint();
     }
 }
