@@ -7,7 +7,7 @@ public class RadiantDraftInfo_Panel extends JPanel {
     public RadiantDraftInfo_Panel(){
         setLayout(new GridLayout(11, 1));
 
-        setBackground(Color.CYAN);
+//        setBackground(Color.CYAN);
 
         add(new JLabel("Dire 10 / Radiant 22"));
         add(new JLabel("Hero #1"));

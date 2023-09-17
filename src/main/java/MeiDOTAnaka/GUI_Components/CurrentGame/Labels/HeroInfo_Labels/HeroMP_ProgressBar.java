@@ -1,4 +1,4 @@
-package GUI.Labels.HeroInfo;
+package MeiDOTAnaka.GUI_Components.CurrentGame.Labels.HeroInfo_Labels;
 
 import javax.swing.*;
 import java.awt.*;

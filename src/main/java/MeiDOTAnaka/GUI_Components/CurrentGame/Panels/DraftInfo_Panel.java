@@ -7,7 +7,7 @@ public class DraftInfo_Panel extends JPanel {
     public DraftInfo_Panel(){
         setLayout(new GridLayout(11, 1));
 
-        setBackground(Color.BLUE);
+//        setBackground(Color.BLUE);
 
         add(new JLabel("Hero #1"));
         add(new JLabel("Hero #2"));
