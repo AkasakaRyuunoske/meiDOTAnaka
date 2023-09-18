@@ -23,20 +23,7 @@ public class Graphs_Button  extends JButton implements ActionListener, MeiDOTAna
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this){
-            SwingUtilities.invokeLater(() -> {
-                System.out.println("Graphs Button Was cliked");
-                selectedPanel.selectedLabel.setText("Graphs");
-
-                state_panel.remove(state_panel.current_panel);
-                state_panel.add(state_panel.graphs_panel, state_panel.gridBagConstraints);
-                state_panel.current_panel = state_panel.graphs_panel;
-
-                meiDOTAnakaFrame.revalidate();
-                meiDOTAnakaFrame.repaint();
-
-                System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
-                System.out.println("Current state: " + state_panel.current_panel.toString());
-            });
+            switchPanel();
         }
     }
 
@@ -45,5 +32,23 @@ public class Graphs_Button  extends JButton implements ActionListener, MeiDOTAna
         this.meiDOTAnakaFrame = context_frame;
         this.selectedPanel    = context_panel;
         this.state_panel      = state_panel;
+    }
+
+    @Override
+    public void switchPanel() {
+        SwingUtilities.invokeLater(() -> {
+            System.out.println("Graphs Button Was cliked");
+            selectedPanel.selectedLabel.setText("Graphs");
+
+            state_panel.remove(state_panel.current_panel);
+            state_panel.add(state_panel.graphs_panel, state_panel.gridBagConstraints);
+            state_panel.current_panel = state_panel.graphs_panel;
+
+            meiDOTAnakaFrame.revalidate();
+            meiDOTAnakaFrame.repaint();
+
+            System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
+            System.out.println("Current state: " + state_panel.current_panel.toString());
+        });
     }
 }

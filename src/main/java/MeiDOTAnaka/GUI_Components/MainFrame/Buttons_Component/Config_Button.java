@@ -25,24 +25,7 @@ public class Config_Button extends JButton implements ActionListener, MeiDOTAnak
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
-            SwingUtilities.invokeLater(() -> {
-                System.out.println("Config Button Was cliked");
-                meiDOTAnakaFrame.setTitle("Yay workin");
-                selectedPanel.updateSelectionText("Configuration");
-
-                selectedPanel.validate();
-                selectedPanel.repaint();
-
-                state_panel.remove(state_panel.current_panel);
-                state_panel.add(state_panel.config_panel, state_panel.gridBagConstraints);
-                state_panel.current_panel = state_panel.config_panel;
-
-                meiDOTAnakaFrame.revalidate();
-                meiDOTAnakaFrame.repaint();
-                System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
-                System.out.println("Current state: " + state_panel.current_panel.toString());
-                System.out.println("Current selection panel background: " + selectedPanel.getBackground());
-            });
+            switchPanel();
         }
     }
 
@@ -51,5 +34,27 @@ public class Config_Button extends JButton implements ActionListener, MeiDOTAnak
         this.meiDOTAnakaFrame = context_frame;
         this.selectedPanel    = context_panel;
         this.state_panel      = state_panel;
+    }
+
+    @Override
+    public void switchPanel() {
+        SwingUtilities.invokeLater(() -> {
+            System.out.println("Config Button Was cliked");
+            meiDOTAnakaFrame.setTitle("Yay workin");
+            selectedPanel.updateSelectionText("Configuration");
+
+            selectedPanel.validate();
+            selectedPanel.repaint();
+
+            state_panel.remove(state_panel.current_panel);
+            state_panel.add(state_panel.config_panel, state_panel.gridBagConstraints);
+            state_panel.current_panel = state_panel.config_panel;
+
+            meiDOTAnakaFrame.revalidate();
+            meiDOTAnakaFrame.repaint();
+            System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
+            System.out.println("Current state: " + state_panel.current_panel.toString());
+            System.out.println("Current selection panel background: " + selectedPanel.getBackground());
+        });
     }
 }

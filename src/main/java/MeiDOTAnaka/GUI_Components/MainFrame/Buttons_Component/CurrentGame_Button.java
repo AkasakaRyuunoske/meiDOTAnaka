@@ -24,6 +24,21 @@ public class CurrentGame_Button  extends JButton implements ActionListener, MeiD
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this){
+            switchPanel();
+        }
+    }
+
+    @Override
+    public void setContext(MeiDOTAnakaFrrame_m context_frame, Selected_Panel context_panel, State_Panel state_panel) {
+        this.meiDOTAnakaFrame = context_frame;
+        this.selectedPanel    = context_panel;
+        this.state_panel      = state_panel;
+    }
+
+    @Override
+    public void switchPanel() {
+        SwingUtilities.invokeLater(() -> {
+
             System.out.println("Current Game Button Was cliked");
 
             selectedPanel.selectedLabel.setText("Current Game");
@@ -37,13 +52,6 @@ public class CurrentGame_Button  extends JButton implements ActionListener, MeiD
             meiDOTAnakaFrame.revalidate();
             System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
             System.out.println("Current state: " + state_panel.current_panel.toString());
-        }
-    }
-
-    @Override
-    public void setContext(MeiDOTAnakaFrrame_m context_frame, Selected_Panel context_panel, State_Panel state_panel) {
-        this.meiDOTAnakaFrame = context_frame;
-        this.selectedPanel    = context_panel;
-        this.state_panel      = state_panel;
+        });
     }
 }
