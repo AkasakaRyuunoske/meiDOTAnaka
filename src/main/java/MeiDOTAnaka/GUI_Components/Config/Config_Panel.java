@@ -5,6 +5,6 @@ import java.awt.*;
 
 public class Config_Panel extends JPanel {
     public Config_Panel(){
-        setBackground(Color.WHITE);
+        setBackground(new Color(17,17,17));
     }
 }
