@@ -32,8 +32,8 @@ public class Buttons_Panel extends JPanel {
 
         add(new JLabel());
         add(new JLabel());
-        add(new JLabel());
-        add(new JLabel());
+        add(new JLabel("User: Mode Demon Eater")); //#todo get this info from config
+        add(new JLabel("Steam id: 76561198401349803")); //#todo get this info from config
         add(new JLabel("Ping: ")); //#todo implement ping module here
     }
 
