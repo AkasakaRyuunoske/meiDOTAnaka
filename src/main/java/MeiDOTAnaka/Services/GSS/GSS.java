@@ -5,20 +5,13 @@ import com.github.mrbean355.dota2.gamestate.PlayingGameState;
 import com.github.mrbean355.dota2.server.GameStateServer;
 import net.dv8tion.jda.api.JDA;
 
-import javax.swing.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 
 public class GSS {
-    static JDA chloyena;
     MeiDOTAnakaFrrame_m meiDOTAnakaFrrame_m;
-    JLabel GPM_label;
-    JLabel XPM_label;
-    JLabel hero_name_label;
-    JLabel gold_from_creeps_label;
-    JLabel gold_from_kills_label;
-    JLabel actions_label;
+    static JDA chloyena;
 
         // OLD CRINGE FRAME
         // Deprecated
@@ -117,11 +110,15 @@ public class GSS {
                     if (newState.getHero().getLevel() > 1) {
                         if (newState.getHero().getLevel() > previousState.getHero().getLevel()) {
                             System.out.println("Yay you got new lvl");
+                            meiDOTAnakaFrrame_m.getState_panel().currentGame_panel.getHeroInfo_panel().getHeroLvl_label().setText(String.valueOf(newState.getHero().getLevel()));
+                            meiDOTAnakaFrrame_m.getState_panel().currentGame_panel.getHeroInfo_panel().getHeroName_label().setText(newState.getHero().getName());
 
+                            meiDOTAnakaFrrame_m.getState_panel().currentGame_panel.getPlayers_panel().getGpm_label().setText(String.valueOf(newState.getPlayer().getGpm()));
+                            meiDOTAnakaFrrame_m.getState_panel().currentGame_panel.getPlayers_panel().getXpm_label().setText(String.valueOf(newState.getPlayer().getXpm()));
 //                            meiDOTAnakaFrame.updateHeroMaxHP(newState.getHero().getMaxHealth());
 //                            meiDOTAnakaFrame.updateHeroMaxMP(newState.getHero().getMaxMana());
 //                            meiDOTAnakaFrame.updateHeroLvl(newState.getHero().getLevel());
-
+//
 //                            MeiDOTAnaka.Services.Discord.ChloyenaBOT.sendMessage("Yay you got new lvl! Now you are " + newState.getHero().getLevel());
                         }
                     }
@@ -159,12 +156,6 @@ public class GSS {
                 System.out.println(newState.getMap());
 //
 //                System.out.println();
-                hero_name_label.setText("Hero is: " + newState.getHero().getName());
-                GPM_label.setText("Your GPM is: " + newState.getPlayer().getGpm());
-                gold_from_creeps_label.setText("Gold from creeps is: " + newState.getPlayer().getGoldFromCreepKills());
-                gold_from_kills_label.setText("Gold from kills is: " + newState.getPlayer().getGoldFromHeroKills());
-                XPM_label.setText("Your GPM is: " + newState.getPlayer().getXpm());
-                actions_label.setText("Your GPM is: " + newState.getPlayer().getCommandsIssued());
                 System.out.println(newState.getPlayer().getGold());
 
 //                meiDOTAnakaFrame.updatePanels(
@@ -188,5 +179,9 @@ public class GSS {
         } catch (IOException e) {
             System.out.println("Error writing data: " + e + ".");
         }
+    }
+
+    public void setGSSContext(MeiDOTAnakaFrrame_m context_frame){
+        meiDOTAnakaFrrame_m = context_frame;
     }
 }
