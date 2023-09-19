@@ -6,8 +6,11 @@ import MeiDOTAnaka.GUI_Components.MainFrame.Selected_Component.Selected_Panel;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 public class Graphs_Button  extends JButton implements ActionListener, MeiDOTAnaka_Button {
     MeiDOTAnakaFrrame_m meiDOTAnakaFrame;
@@ -15,8 +18,18 @@ public class Graphs_Button  extends JButton implements ActionListener, MeiDOTAna
     State_Panel state_panel;
 
     public Graphs_Button(){
+        setBackground(null);
         setFocusable(false);
         setText("Graphs");
+
+        try {
+            Font font = Font.createFont(Font.TRUETYPE_FONT, new File("src\\main\\java\\MeiDOTAnaka\\Resources\\Fonts\\OldEnglishTextMT.ttf"));
+            Font sizedFont = font.deriveFont(Font.BOLD, 28f);
+            setFont(sizedFont);
+            setForeground(new Color(111, 24, 211));
+        } catch (FontFormatException | IOException e) {
+            e.printStackTrace();
+        }
 
         addActionListener(this::actionPerformed);
     }
@@ -39,6 +52,8 @@ public class Graphs_Button  extends JButton implements ActionListener, MeiDOTAna
     public void switchPanel() {
         // seems like using invoke later is more thread safe, but idk.
         SwingUtilities.invokeLater(() -> {
+            setBackground(null);
+
             System.out.println("Graphs Button Was cliked");
             selectedPanel.selectedLabel.setText("Graphs");
 

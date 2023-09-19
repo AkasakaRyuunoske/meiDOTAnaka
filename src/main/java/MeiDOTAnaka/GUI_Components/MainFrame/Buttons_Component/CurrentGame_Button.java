@@ -9,6 +9,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 public class CurrentGame_Button  extends JButton implements ActionListener, MeiDOTAnaka_Button {
     MeiDOTAnakaFrrame_m meiDOTAnakaFrame;
@@ -16,8 +18,18 @@ public class CurrentGame_Button  extends JButton implements ActionListener, MeiD
     State_Panel state_panel;
 
     public CurrentGame_Button(){
+        setBackground(null);
         setFocusable(false);
         setText("Current Game");
+
+        try {
+            Font font = Font.createFont(Font.TRUETYPE_FONT, new File("src\\main\\java\\MeiDOTAnaka\\Resources\\Fonts\\OldEnglishTextMT.ttf"));
+            Font sizedFont = font.deriveFont(Font.BOLD, 28f);
+            setFont(sizedFont);
+            setForeground(new Color(111, 24, 211));
+        } catch (FontFormatException | IOException e) {
+            e.printStackTrace();
+        }
 
         addActionListener(this::actionPerformed);
     }
@@ -40,6 +52,7 @@ public class CurrentGame_Button  extends JButton implements ActionListener, MeiD
     public void switchPanel() {
         // seems like using invoke later is more thread safe, but idk.
         SwingUtilities.invokeLater(() -> {
+            setBackground(null);
 
             System.out.println("Current Game Button Was cliked");
 
