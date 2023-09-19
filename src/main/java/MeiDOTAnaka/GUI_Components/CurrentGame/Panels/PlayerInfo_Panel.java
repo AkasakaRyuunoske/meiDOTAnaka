@@ -1,10 +1,14 @@
 package MeiDOTAnaka.GUI_Components.CurrentGame.Panels;
 
 import MeiDOTAnaka.GUI_Components.CurrentGame.Labels.PlayerInfo_Labels.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.swing.*;
 import java.awt.*;
 
+@Getter
+@Setter
 public class PlayerInfo_Panel  extends JPanel {
     APM_Label apm_label;
     GPM_Label gpm_label;

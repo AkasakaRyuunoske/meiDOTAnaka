@@ -5,10 +5,14 @@ import MeiDOTAnaka.GUI_Components.CurrentGame.Panels.HeroInfo_Panel;
 import MeiDOTAnaka.GUI_Components.CurrentGame.Panels.PlayerInfo_Panel;
 import MeiDOTAnaka.GUI_Components.CurrentGame.Panels.RadiantDraftInfo_Panel;
 import MeiDOTAnaka.GUI_Components.Players.Players_Panel;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.swing.*;
 import java.awt.*;
 
+@Getter
+@Setter
 public class CurrentGame_Panel extends JPanel {
     DraftInfo_Panel draftInfo_panel;
     RadiantDraftInfo_Panel radiantDraftInfo_panel;

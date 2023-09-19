@@ -3,10 +3,14 @@ package MeiDOTAnaka.GUI_Components.MainFrame;
 import MeiDOTAnaka.GUI_Components.MainFrame.Buttons_Component.Buttons_Panel;
 import MeiDOTAnaka.GUI_Components.MainFrame.MainPanel.State_Panel;
 import MeiDOTAnaka.GUI_Components.MainFrame.Selected_Component.Selected_Panel;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.swing.*;
 import java.awt.*;
 
+@Getter
+@Setter
 public class MeiDOTAnakaFrrame_m extends JFrame {
     Selected_Panel selected_panel;
     State_Panel state_panel;

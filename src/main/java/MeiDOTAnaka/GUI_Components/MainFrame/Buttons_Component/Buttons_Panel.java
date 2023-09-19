@@ -15,7 +15,7 @@ public class Buttons_Panel extends JPanel {
     PostGame_Button postGame_button;
 
     public Buttons_Panel(){
-        setBackground(Color.gray);
+        setBackground(Color.black);
         setLayout(new GridLayout(10, 1));
 
         config_button = new Config_Button();

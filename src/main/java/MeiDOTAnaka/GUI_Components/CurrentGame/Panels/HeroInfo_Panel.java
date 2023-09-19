@@ -1,15 +1,18 @@
 package MeiDOTAnaka.GUI_Components.CurrentGame.Panels;
 
 import MeiDOTAnaka.GUI_Components.CurrentGame.Labels.HeroInfo_Labels.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.swing.*;
 import java.awt.*;
 
+@Getter
+@Setter
 public class HeroInfo_Panel extends JPanel {
     HeroInfo_Label heroInfo_label;
     HeroAghanimScepter_Label heroAghanimScepter_label;
     HeroAghanimShard_Label heroAghanimShard_label;
-
     HeroHP_ProgressBar heroHP_progressBar;
     HeroMP_ProgressBar heroMP_progressBar;
     HeroLvl_Label heroLvl_label;
