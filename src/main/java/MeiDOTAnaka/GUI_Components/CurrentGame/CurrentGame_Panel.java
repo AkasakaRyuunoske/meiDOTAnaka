@@ -21,7 +21,7 @@ public class CurrentGame_Panel extends JPanel {
         gridBagConstraints = new GridBagConstraints();
         setLayout(new GridBagLayout());
 
-        setBackground(Color.GRAY);
+        setBackground(new Color(17,17,17));
 
         draftInfo_panel = new DraftInfo_Panel();
         radiantDraftInfo_panel = new RadiantDraftInfo_Panel();

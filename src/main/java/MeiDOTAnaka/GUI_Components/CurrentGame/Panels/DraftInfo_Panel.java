@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class DraftInfo_Panel extends JPanel {
     public DraftInfo_Panel(){
+        setBackground(new Color(17,17,17));
         setLayout(new GridLayout(11, 1));
 
 //        setBackground(Color.BLUE);

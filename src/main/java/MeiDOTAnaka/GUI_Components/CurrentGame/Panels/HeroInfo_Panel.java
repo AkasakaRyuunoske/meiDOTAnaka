@@ -16,6 +16,8 @@ public class HeroInfo_Panel extends JPanel {
     HeroName_Label heroName_label;
 
     public HeroInfo_Panel(){
+        setBackground(new Color(17,17,17));
+
         heroAghanimScepter_label = new HeroAghanimScepter_Label();
         heroAghanimShard_label = new HeroAghanimShard_Label();
         heroHP_progressBar = new HeroHP_ProgressBar();

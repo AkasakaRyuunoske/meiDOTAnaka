@@ -13,6 +13,8 @@ public class PlayerInfo_Panel  extends JPanel {
     PlayerInfo_Label playerInfo_label;
 
     public PlayerInfo_Panel(){
+        setBackground(new Color(17,17,17));
+
         setLayout(new GridLayout(2,2));
 
         apm_label = new APM_Label();

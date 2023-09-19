@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class RadiantDraftInfo_Panel extends JPanel {
     public RadiantDraftInfo_Panel(){
+        setBackground(new Color(17,17,17));
         setLayout(new GridLayout(11, 1));
 
 //        setBackground(Color.CYAN);
