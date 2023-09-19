@@ -4,6 +4,7 @@ import MeiDOTAnaka.GUI_Components.Config.Config_Panel;
 import MeiDOTAnaka.GUI_Components.MainFrame.MainPanel.State_Panel;
 import MeiDOTAnaka.GUI_Components.MainFrame.MeiDOTAnakaFrrame_m;
 import MeiDOTAnaka.GUI_Components.MainFrame.Selected_Component.Selected_Panel;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,7 +31,7 @@ public class Config_Button extends JButton implements ActionListener, MeiDOTAnak
     }
 
     @Override
-    public void setContext(MeiDOTAnakaFrrame_m context_frame, Selected_Panel context_panel, State_Panel state_panel) {
+    public void setContext(@NotNull MeiDOTAnakaFrrame_m context_frame, @NotNull Selected_Panel context_panel, @NotNull State_Panel state_panel) {
         this.meiDOTAnakaFrame = context_frame;
         this.selectedPanel    = context_panel;
         this.state_panel      = state_panel;
@@ -38,6 +39,7 @@ public class Config_Button extends JButton implements ActionListener, MeiDOTAnak
 
     @Override
     public void switchPanel() {
+        // seems like using invoke later is more thread safe, but idk.
         SwingUtilities.invokeLater(() -> {
             System.out.println("Config Button Was cliked");
             meiDOTAnakaFrame.setTitle("Yay workin");
