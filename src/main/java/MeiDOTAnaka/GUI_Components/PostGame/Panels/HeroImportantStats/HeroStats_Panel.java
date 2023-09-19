@@ -1,4 +1,4 @@
-package MeiDOTAnaka.GUI_Components.PostGame.Panels.HeroImportantStatsPanel;
+package MeiDOTAnaka.GUI_Components.PostGame.Panels.HeroImportantStats;
 
 import MeiDOTAnaka.GUI_Components.PostGame.Labels.HeroImportantStatsLabels.*;
 
@@ -6,13 +6,13 @@ import javax.swing.*;
 import java.awt.*;
 
 public class HeroStats_Panel extends JPanel {
-    APM_Stat_Label apm_stat_label;
-    DPM_Stat_Label dpm_stat_label;
-    GPM_Stat_Label gpm_stat_label;
-    XPM_Stat_Label xpm_stat_label;
-    KDA_Stat_Label kda_stat_label;
-    Creeps_Stat_Label creeps_stat_label;
-    Networth_Stat_Label networth_stat_label;
+    public APM_Stat_Label apm_stat_label;
+    public DPM_Stat_Label dpm_stat_label;
+    public GPM_Stat_Label gpm_stat_label;
+    public XPM_Stat_Label xpm_stat_label;
+    public KDA_Stat_Label kda_stat_label;
+    public Creeps_Stat_Label creeps_stat_label;
+    public Networth_Stat_Label networth_stat_label;
 
     public HeroStats_Panel(){
         setLayout(new GridLayout(10, 1));

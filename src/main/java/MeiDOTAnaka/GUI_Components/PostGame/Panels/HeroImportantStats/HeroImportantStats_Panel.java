@@ -1,11 +1,11 @@
-package MeiDOTAnaka.GUI_Components.PostGame.Panels.HeroImportantStatsPanel;
+package MeiDOTAnaka.GUI_Components.PostGame.Panels.HeroImportantStats;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class HeroImportantStats_Panel extends JPanel {
-    Hero_Panel hero_panel;
-    HeroStats_Panel heroStats_panel;
+    public Hero_Panel hero_panel;
+    public HeroStats_Panel heroStats_panel;
 
     public HeroImportantStats_Panel(){
         setLayout(new GridLayout(1,2));

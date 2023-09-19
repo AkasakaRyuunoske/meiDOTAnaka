@@ -1,4 +1,4 @@
-package MeiDOTAnaka.GUI_Components.PostGame.Panels.HeroImportantStatsPanel;
+package MeiDOTAnaka.GUI_Components.PostGame.Panels.HeroImportantStats;
 
 import javax.swing.*;
 import java.awt.*;
