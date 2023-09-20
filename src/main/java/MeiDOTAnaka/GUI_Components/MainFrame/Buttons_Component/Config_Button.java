@@ -62,8 +62,6 @@ public class Config_Button extends JButton implements ActionListener, MeiDOTAnak
     public void switchPanel() {
         // seems like using invoke later is more thread safe, but idk.
         SwingUtilities.invokeLater(() -> {
-            selectedPanel.selectedLabel.setText("New selection");
-
             System.out.println("Config Button Was cliked");
 
             meiDOTAnakaFrame.setTitle("Yay workin");

@@ -38,6 +38,7 @@ public class CurrentGame_Button  extends JButton implements ActionListener, MeiD
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this){
             switchPanel();
+            state_panel.selected_panel.selectedLabel.setText("Current Game");
         }
     }
 

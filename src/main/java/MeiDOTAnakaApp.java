@@ -11,8 +11,8 @@ public class MeiDOTAnakaApp {
         MeiDOTAnakaFrrame_m meiDOTAnakaFrrame_m = new MeiDOTAnakaFrrame_m();
         meiDOTAnakaFrrame_m.setButtonsContext(meiDOTAnakaFrrame_m);
 
-        GSS gss = new GSS();
-        gss.setGSSContext(meiDOTAnakaFrrame_m);
-        gss.startGSS(44444);
+//        GSS gss = new GSS();
+//        gss.setGSSContext(meiDOTAnakaFrrame_m);
+//        gss.startGSS(44444);
     }
 }

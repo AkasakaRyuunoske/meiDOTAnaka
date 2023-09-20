@@ -43,6 +43,7 @@ public class PostGame_Button  extends JButton implements ActionListener, MeiDOTA
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this){
             switchPanel();
+            state_panel.selected_panel.selectedLabel.setText("Post Game");
         }
     }
 
