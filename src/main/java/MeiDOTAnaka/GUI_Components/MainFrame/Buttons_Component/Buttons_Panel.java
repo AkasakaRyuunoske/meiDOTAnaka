@@ -14,6 +14,7 @@ public class Buttons_Panel extends JPanel {
     Graphs_Button graphs_button;
     Players_Button players_button;
     PostGame_Button postGame_button;
+    CringeList_Button cringeList_button;
     UserInfo_Panel userInfo_panel;
 
     public Buttons_Panel(){
@@ -25,6 +26,7 @@ public class Buttons_Panel extends JPanel {
         graphs_button = new Graphs_Button();
         players_button = new Players_Button();
         postGame_button = new PostGame_Button();
+        cringeList_button = new CringeList_Button();
         userInfo_panel = new UserInfo_Panel();
 
         add(config_button);
@@ -32,9 +34,10 @@ public class Buttons_Panel extends JPanel {
         add(graphs_button);
         add(players_button);
         add(postGame_button);
+        add(cringeList_button);
 
         // placeholders for if I decide to put more elements here. For now they just separate buttons from user info
-        add(new JLabel());
+//        add(new JLabel());
 
         JLabel yellow_part = new JLabel();
         JLabel blue_part = new JLabel();
