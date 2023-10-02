@@ -27,6 +27,9 @@ public class Config_Button extends JButton implements ActionListener, MeiDOTAnak
 
         setBackground(null);
         setFocusable(false);
+        setName("config_button");
+
+        System.out.println("getName(): " + getName());
 
         try {
             Font font = Font.createFont(Font.TRUETYPE_FONT, new File("src\\main\\java\\MeiDOTAnaka\\Resources\\Fonts\\OldEnglishTextMT.ttf"));
@@ -46,8 +49,10 @@ public class Config_Button extends JButton implements ActionListener, MeiDOTAnak
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
             switchPanel();
-//            configurationManager.getConfigurationFile();
-//            configurationManager.readConfigurationFile();
+            configurationManager.getConfigurationFile();
+            configurationManager.readConfigurationFile();
+
+            configurationManager.applyConfiguration(this);
         }
     }
 
