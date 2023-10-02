@@ -1,0 +1,26 @@
+{
+    "config": {
+        "buttons": [
+            {
+                "name": "config_button",
+                "font": "default",
+                "background_color": "black",
+                "foreground_color": "magenta"
+            },
+            {
+                "name": "cringe_list_button",
+                "font": "default",
+                "background_color": "black",
+                "foreground_color": "magenta"
+            }
+        ],
+        "labels": [
+            {
+                "name": "cringe_list_button",
+                "font": "default",
+                "background_color": "black",
+                "foreground_color": "magenta"
+            }
+        ]
+    }
+}
