@@ -10,11 +10,11 @@ import java.awt.*;
 
 public class Buttons_Panel extends JPanel {
     Config_Button config_button;
-    CurrentGame_Button currentGame_button;
-    Graphs_Button graphs_button;
-    Players_Button players_button;
-    PostGame_Button postGame_button;
-    CringeList_Button cringeList_button;
+    public CurrentGame_Button currentGame_button;
+    public Graphs_Button graphs_button;
+    public Players_Button players_button;
+    public PostGame_Button postGame_button;
+    public CringeList_Button cringeList_button;
     UserInfo_Panel userInfo_panel;
 
     public Buttons_Panel(){
