@@ -4,16 +4,170 @@
             {
                 "name": "config_button",
                 "font": "default",
-                "background_color": "black",
-                "foreground_color": "magenta"
+                "text": "Text from config",
+                "must_be_applied": "true",
+                "background_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 123
+                    },
+                    {
+                        "b": 222
+                    }
+                ],
+                "foreground_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 255
+                    },
+                    {
+                        "b": 255
+                    }
+                ]
+            },
+            {
+                "name": "current_game_button",
+                "font": "default",
+                "text": "Text from config",
+                "must_be_applied": "true",
+                "background_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 123
+                    },
+                    {
+                        "b": 222
+                    }
+                ],
+                "foreground_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 255
+                    },
+                    {
+                        "b": 255
+                    }
+                ]
+            },
+            {
+                "name": "post_game_button",
+                "font": "default",
+                "text": "Text from config",
+                "must_be_applied": "true",
+                "background_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 123
+                    },
+                    {
+                        "b": 222
+                    }
+                ],
+                "foreground_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 255
+                    },
+                    {
+                        "b": 255
+                    }
+                ]
             },
             {
                 "name": "cringe_list_button",
                 "font": "default",
-                "background_color": "black",
-                "foreground_color": "magenta"
-            }
-        ],
+                "text": "Text from config",
+                "must_be_applied": "true",
+                "background_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 123
+                    },
+                    {
+                        "b": 222
+                    }
+                ],
+                "foreground_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 255
+                    },
+                    {
+                        "b": 255
+                    }
+                ]
+            },{
+            "name": "players_button",
+            "font": "default",
+            "text": "Text from config",
+            "must_be_applied": "true",
+            "background_color": [
+                {
+                    "r": 255
+                },
+                {
+                    "g": 123
+                },
+                {
+                    "b": 222
+                }
+            ],
+            "foreground_color": [
+                {
+                    "r": 255
+                },
+                {
+                    "g": 255
+                },
+                {
+                    "b": 255
+                }
+            ]
+        },{
+             "name": "graphs_button",
+             "font": "default",
+             "text": "Text from config",
+             "must_be_applied": "true",
+             "background_color": [
+                 {
+                     "r": 255
+                 },
+                 {
+                     "g": 123
+                 },
+                 {
+                     "b": 222
+                 }
+             ],
+             "foreground_color": [
+                 {
+                     "r": 255
+                 },
+                 {
+                     "g": 255
+                 },
+                 {
+                     "b": 255
+                 }
+             ]
+         }
+    ],
         "labels": [
             {
                 "name": "cringe_list_button",
