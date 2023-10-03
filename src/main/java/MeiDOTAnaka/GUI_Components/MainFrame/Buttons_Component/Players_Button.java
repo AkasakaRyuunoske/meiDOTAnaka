@@ -21,7 +21,7 @@ public class Players_Button extends JButton implements ActionListener, MeiDOTAna
         setBackground(null);
         setFocusable(false);
         setText("Players");
-
+        setName("players_button");
         try {
             Font font = Font.createFont(Font.TRUETYPE_FONT, new File("src\\main\\java\\MeiDOTAnaka\\Resources\\Fonts\\OldEnglishTextMT.ttf"));
             Font sizedFont = font.deriveFont(Font.BOLD, 28f);
@@ -53,10 +53,6 @@ public class Players_Button extends JButton implements ActionListener, MeiDOTAna
     public void switchPanel() {
         // seems like using invoke later is more thread safe, but idk.
         SwingUtilities.invokeLater(() -> {
-            setBackground(null);
-
-            System.out.println("Players Button Was cliked");
-
             selectedPanel.selectedLabel.setText("Players");
 
             state_panel.remove(state_panel.current_panel);
@@ -65,8 +61,6 @@ public class Players_Button extends JButton implements ActionListener, MeiDOTAna
 
             meiDOTAnakaFrame.revalidate();
             meiDOTAnakaFrame.repaint();
-            System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
-            System.out.println("Current state: " + state_panel.current_panel.toString());
         });
     }
 }
