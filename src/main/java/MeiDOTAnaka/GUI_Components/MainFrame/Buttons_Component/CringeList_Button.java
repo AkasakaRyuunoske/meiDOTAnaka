@@ -19,6 +19,7 @@ public class CringeList_Button extends JButton implements ActionListener, MeiDOT
 
     public CringeList_Button(){
         setText("Cringe List");
+        setName("cringe_list_button");
 
         setBackground(null);
         setFocusable(false);
