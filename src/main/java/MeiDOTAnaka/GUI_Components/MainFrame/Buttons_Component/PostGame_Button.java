@@ -24,6 +24,7 @@ public class PostGame_Button  extends JButton implements ActionListener, MeiDOTA
     public PostGame_Button(){
         setBackground(null);
         setFocusable(false);
+        setName("post_game_button");
 
         try {
             Font font = Font.createFont(Font.TRUETYPE_FONT, new File("src\\main\\java\\MeiDOTAnaka\\Resources\\Fonts\\OldEnglishTextMT.ttf"));
@@ -58,20 +59,13 @@ public class PostGame_Button  extends JButton implements ActionListener, MeiDOTA
     public void switchPanel() {
         // seems like using invoke later is more thread safe, but idk.
         SwingUtilities.invokeLater(() -> {
-            System.out.println("Post Game Button Was cliked");
-
             selectedPanel.selectedLabel.setText("Post Game");
-            selectedPanel.setBackground(Color.GRAY);
-
             state_panel.remove(state_panel.current_panel);
             state_panel.add(state_panel.postGame_panel, state_panel.gridBagConstraints);
             state_panel.current_panel = state_panel.postGame_panel;
 
             meiDOTAnakaFrame.revalidate();
             meiDOTAnakaFrame.repaint();
-
-            System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
-            System.out.println("Current state: " + state_panel.current_panel.toString());
 
             connect();
         });
