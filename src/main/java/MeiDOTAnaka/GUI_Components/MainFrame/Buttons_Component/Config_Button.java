@@ -1,6 +1,5 @@
 package MeiDOTAnaka.GUI_Components.MainFrame.Buttons_Component;
 
-import MeiDOTAnaka.GUI_Components.Config.Config_Panel;
 import MeiDOTAnaka.GUI_Components.MainFrame.MainPanel.State_Panel;
 import MeiDOTAnaka.GUI_Components.MainFrame.MeiDOTAnakaFrrame_m;
 import MeiDOTAnaka.GUI_Components.MainFrame.Selected_Component.Selected_Panel;
@@ -8,8 +7,6 @@ import MeiDOTAnaka.Services.Configuration.ConfigurationManager;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,10 +46,6 @@ public class Config_Button extends JButton implements ActionListener, MeiDOTAnak
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
             switchPanel();
-            configurationManager.getConfigurationFile();
-            configurationManager.readConfigurationFile();
-
-            configurationManager.applyConfiguration(this);
         }
     }
 
@@ -61,21 +54,15 @@ public class Config_Button extends JButton implements ActionListener, MeiDOTAnak
         this.meiDOTAnakaFrame = context_frame;
         this.selectedPanel    = context_panel;
         this.state_panel      = state_panel;
+
+        state_panel.config_panel.setContextFrame(meiDOTAnakaFrame);
     }
 
     @Override
     public void switchPanel() {
         // seems like using invoke later is more thread safe, but idk.
         SwingUtilities.invokeLater(() -> {
-            System.out.println("Config Button Was cliked");
-
-            meiDOTAnakaFrame.setTitle("Yay workin");
-            selectedPanel.updateSelectionText("Configuration");
-
             state_panel.selected_panel.selectedLabel.setText("Configuration");
-
-            selectedPanel.revalidate();
-            selectedPanel.repaint();
 
             state_panel.remove(state_panel.current_panel);
             state_panel.add(state_panel.config_panel, state_panel.gridBagConstraints);
@@ -83,9 +70,6 @@ public class Config_Button extends JButton implements ActionListener, MeiDOTAnak
 
             meiDOTAnakaFrame.revalidate();
             meiDOTAnakaFrame.repaint();
-            System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
-            System.out.println("Current state: " + state_panel.current_panel.toString());
-            System.out.println("Current selection panel background: " + selectedPanel.getBackground());
         });
     }
 }
