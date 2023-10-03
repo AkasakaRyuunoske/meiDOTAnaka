@@ -21,6 +21,7 @@ public class CurrentGame_Button  extends JButton implements ActionListener, MeiD
         setBackground(null);
         setFocusable(false);
         setText("Current Game");
+        setName("current_game_button");
 
         try {
             Font font = Font.createFont(Font.TRUETYPE_FONT, new File("src\\main\\java\\MeiDOTAnaka\\Resources\\Fonts\\OldEnglishTextMT.ttf"));
@@ -38,7 +39,6 @@ public class CurrentGame_Button  extends JButton implements ActionListener, MeiD
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this){
             switchPanel();
-            state_panel.selected_panel.selectedLabel.setText("Current Game");
         }
     }
 
@@ -53,21 +53,14 @@ public class CurrentGame_Button  extends JButton implements ActionListener, MeiD
     public void switchPanel() {
         // seems like using invoke later is more thread safe, but idk.
         SwingUtilities.invokeLater(() -> {
-            setBackground(null);
-
-            System.out.println("Current Game Button Was cliked");
-
-            selectedPanel.selectedLabel.setText("Current Game");
-            selectedPanel.setBackground(Color.GRAY);
-            selectedPanel.repaint();
+            state_panel.selected_panel.selectedLabel.setText("Current Game");
 
             state_panel.remove(state_panel.current_panel);
             state_panel.add(state_panel.currentGame_panel, state_panel.gridBagConstraints);
             state_panel.current_panel = state_panel.currentGame_panel;
 
             meiDOTAnakaFrame.revalidate();
-            System.out.println("Current Selection label text: " + selectedPanel.selectedLabel.getText());
-            System.out.println("Current state: " + state_panel.current_panel.toString());
+            meiDOTAnakaFrame.repaint();
         });
     }
 }
