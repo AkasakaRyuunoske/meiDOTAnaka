@@ -14,6 +14,8 @@ public class ConfigurationManager {
     private File configurationFile;
     private String fileContents = "";
 
+    private String PATH_TO_CONFIG = "D:\\meiDO_TAnaka\\meiDO_TAnaka\\test.cringe";
+
     public File getConfigurationFile() {
         JFileChooser fileChooser = new JFileChooser(".");
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Cringe files only", "cringe");
@@ -26,6 +28,11 @@ public class ConfigurationManager {
 
         File selectedFile = fileChooser.getSelectedFile();
         System.out.println(selectedFile.getName());
+        try {
+            System.out.println(selectedFile.getCanonicalPath());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         configurationFile = selectedFile;
 
@@ -48,19 +55,43 @@ public class ConfigurationManager {
         parseConfigurationFile();
     }
 
-    public void parseConfigurationFile(){
+    public void readConfigurationFile(boolean useDefaultPath){
+        fileContents = "";
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(PATH_TO_CONFIG))) {
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+                fileContents += line;
+            }
+            System.out.println("File contents: " + fileContents);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
+        parseConfigurationFile();
+    }
+
+    public JsonObject parseConfigurationFile(){
+
+        JsonObject jsonObject = JsonParser.parseString(fileContents).getAsJsonObject();
+        jsonObject = jsonObject.getAsJsonObject("config");
+
+        return jsonObject;
+    }
+
+    public String getValueFromConfigurationFile(String type, int index, String key){
+        // if file wasn't read yet then we read it using default path
+        if (configurationFile == null) {
+            readConfigurationFile(true);
+        }
+
+        return parseConfigurationFile().getAsJsonArray(type).get(index).getAsJsonObject().get(key).toString().replaceAll("\"", "");
     }
 
     public void applyConfiguration(JButton jButton){
-        JsonObject jsonObject = new JsonObject();
-        jsonObject = JsonParser.parseString(fileContents).getAsJsonObject();
-        jsonObject = jsonObject.getAsJsonObject("config");
+        JsonObject configJson = parseConfigurationFile();
 
-        JsonArray buttonsArray = jsonObject.getAsJsonArray("buttons");
-
-        System.out.println(buttonsArray.get(0));
-        System.out.println(buttonsArray.get(1));
+        JsonArray buttonsArray = configJson.getAsJsonArray("buttons");
 
         for (JsonElement jsonElement: buttonsArray){
 
