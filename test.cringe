@@ -112,68 +112,154 @@
                         "b": 255
                     }
                 ]
-            },{
-            "name": "players_button",
-            "font": "default",
-            "text": "Text from config",
-            "must_be_applied": "true",
-            "background_color": [
-                {
-                    "r": 255
-                },
-                {
-                    "g": 123
-                },
-                {
-                    "b": 222
-                }
-            ],
-            "foreground_color": [
-                {
-                    "r": 255
-                },
-                {
-                    "g": 255
-                },
-                {
-                    "b": 255
-                }
-            ]
-        },{
-             "name": "graphs_button",
-             "font": "default",
-             "text": "Text from config",
-             "must_be_applied": "true",
-             "background_color": [
-                 {
-                     "r": 255
-                 },
-                 {
-                     "g": 123
-                 },
-                 {
-                     "b": 222
-                 }
-             ],
-             "foreground_color": [
-                 {
-                     "r": 255
-                 },
-                 {
-                     "g": 255
-                 },
-                 {
-                     "b": 255
-                 }
-             ]
-         }
-    ],
+            },
+            {
+                "name": "players_button",
+                "font": "default",
+                "text": "Text from config",
+                "must_be_applied": "true",
+                "background_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 123
+                    },
+                    {
+                        "b": 222
+                    }
+                ],
+                "foreground_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 255
+                    },
+                    {
+                        "b": 255
+                    }
+                ]
+            },
+            {
+                "name": "graphs_button",
+                "font": "default",
+                "text": "Text from config",
+                "must_be_applied": "true",
+                "background_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 123
+                    },
+                    {
+                        "b": 222
+                    }
+                ],
+                "foreground_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 255
+                    },
+                    {
+                        "b": 255
+                    }
+                ]
+            }
+        ],
         "labels": [
             {
-                "name": "cringe_list_button",
+                "name": "steamid_label",
                 "font": "default",
-                "background_color": "black",
-                "foreground_color": "magenta"
+                "text": "76561198401349803",
+                "must_be_applied": "true",
+                "background_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 123
+                    },
+                    {
+                        "b": 222
+                    }
+                ],
+                "foreground_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 255
+                    },
+                    {
+                        "b": 255
+                    }
+                ]
+            },
+            {
+                "name": "dota_username_label",
+                "font": "default",
+                "text": "mode: demon eater",
+                "must_be_applied": "true",
+                "background_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 123
+                    },
+                    {
+                        "b": 222
+                    }
+                ],
+                "foreground_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 255
+                    },
+                    {
+                        "b": 255
+                    }
+                ]
+            },
+            {
+                "name": "dotaid_label",
+                "font": "default",
+                "text": "441084075",
+                "must_be_applied": "true",
+                "background_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 123
+                    },
+                    {
+                        "b": 222
+                    }
+                ],
+                "foreground_color": [
+                    {
+                        "r": 255
+                    },
+                    {
+                        "g": 255
+                    },
+                    {
+                        "b": 255
+                    }
+                ]
+            }
+        ],
+        "api_keys": [
+            {
+                "discord": "",
+                "steam": ""
             }
         ]
     }
