@@ -81,37 +81,51 @@ public class PostGame_Button  extends JButton implements ActionListener, MeiDOTA
                 matchDetailsParser.getPlayersFromJsonObject(match);
                 System.out.println("hero id: " + matchDetailsParser.getPlayersFromJsonObject(match).get(1).getAsJsonObject().get("hero_id"));
 
-                state_panel.postGame_panel.heroImportantStats_panel.heroStats_panel.gpm_stat_label.setText("GPM: " + matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("gold_per_min").toString());
-                state_panel.postGame_panel.heroImportantStats_panel.heroStats_panel.xpm_stat_label.setText("XPM: " + matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("xp_per_min").toString());
+                JsonObject you_as_player;
+
+                int i = 0;
+                while (true){
+                    if (matchDetailsParser.getPlayersFromJsonObject(match).get(i).getAsJsonObject().get("account_id").toString().equals("441084075")){
+                        System.out.println("found!");
+                        you_as_player = matchDetailsParser.getPlayersFromJsonObject(match).get(i).getAsJsonObject();
+                        break;
+                    } else {
+                        i++;
+                    }
+                }
+
+
+                state_panel.postGame_panel.heroImportantStats_panel.heroStats_panel.gpm_stat_label.setText("GPM: " + you_as_player.get("gold_per_min").toString());
+                state_panel.postGame_panel.heroImportantStats_panel.heroStats_panel.xpm_stat_label.setText("XPM: " + you_as_player.get("xp_per_min").toString());
 
                 state_panel.postGame_panel.heroImportantStats_panel.heroStats_panel.kda_stat_label
                         .setText("KDA: "
-                                + matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("kills").toString()
+                                + you_as_player.get("kills").toString()
                                 + "/"
-                                + matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("deaths").toString()
+                                + you_as_player.get("deaths").toString()
                                 + "/"
-                                + matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("assists").toString()
+                                + you_as_player.get("assists").toString()
                         );
 
-                state_panel.postGame_panel.heroImportantStats_panel.heroStats_panel.dpm_stat_label.setText("DPM: " + matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("hero_damage").toString());
-                state_panel.postGame_panel.heroImportantStats_panel.heroStats_panel.networth_stat_label.setText("Networth: " + matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("net_worth").toString());
+                state_panel.postGame_panel.heroImportantStats_panel.heroStats_panel.dpm_stat_label.setText("DPM: " + you_as_player.get("hero_damage").toString());
+                state_panel.postGame_panel.heroImportantStats_panel.heroStats_panel.networth_stat_label.setText("Networth: " + you_as_player.get("net_worth").toString());
                 state_panel.postGame_panel.heroImportantStats_panel.heroStats_panel.creeps_stat_label
                         .setText("Creeps: "
-                                + matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("last_hits").toString()
+                                + you_as_player.get("last_hits").toString()
                                 + "/"
-                                + matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("denies").toString()
+                                + you_as_player.get("denies").toString()
                         );
 
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_1.setText(matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("item_0").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_2.setText(matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("item_1").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_3.setText(matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("item_2").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_4.setText(matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("item_3").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_5.setText(matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("item_4").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_6.setText(matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("item_5").toString());
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_1.setText(you_as_player.get("item_0").toString());
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_2.setText(you_as_player.get("item_1").toString());
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_3.setText(you_as_player.get("item_2").toString());
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_4.setText(you_as_player.get("item_3").toString());
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_5.setText(you_as_player.get("item_4").toString());
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_6.setText(you_as_player.get("item_5").toString());
 
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_1.setText(matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("backpack_0").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_2.setText(matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("backpack_1").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_3.setText(matchDetailsParser.getPlayersFromJsonObject(match).get(0).getAsJsonObject().get("backpack_2").toString());
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_1.setText(you_as_player.get("backpack_0").toString());
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_2.setText(you_as_player.get("backpack_1").toString());
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_3.setText(you_as_player.get("backpack_2").toString());
 
             } else {
                 System.err.println("Something went wrong. Probably swing took too much to switch panels");
