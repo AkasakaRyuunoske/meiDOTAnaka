@@ -12,7 +12,7 @@ public class Buttons_Panel extends JPanel {
     Config_Button config_button;
     public CurrentGame_Button currentGame_button;
     public Graphs_Button graphs_button;
-    public Players_Button players_button;
+    public Items_Button items_button;
     public PostGame_Button postGame_button;
     public CringeList_Button cringeList_button;
     UserInfo_Panel userInfo_panel;
@@ -24,16 +24,16 @@ public class Buttons_Panel extends JPanel {
         config_button = new Config_Button();
         currentGame_button = new CurrentGame_Button();
         graphs_button = new Graphs_Button();
-        players_button = new Players_Button();
+        items_button = new Items_Button();
         postGame_button = new PostGame_Button();
         cringeList_button = new CringeList_Button();
         userInfo_panel = new UserInfo_Panel();
 
         add(config_button);
         add(currentGame_button);
-        add(graphs_button);
-        add(players_button);
         add(postGame_button);
+        add(graphs_button);
+        add(items_button);
         add(cringeList_button);
 
         // placeholders for if I decide to put more elements here. For now they just separate buttons from user info
@@ -60,7 +60,7 @@ public class Buttons_Panel extends JPanel {
         config_button.setContext     (context_frame, context_panel, state_panel);
         currentGame_button.setContext(context_frame, context_panel, state_panel);
         graphs_button.setContext     (context_frame, context_panel, state_panel);
-        players_button.setContext    (context_frame, context_panel, state_panel);
+        items_button.setContext    (context_frame, context_panel, state_panel);
         postGame_button.setContext   (context_frame, context_panel, state_panel);
     }
 }
