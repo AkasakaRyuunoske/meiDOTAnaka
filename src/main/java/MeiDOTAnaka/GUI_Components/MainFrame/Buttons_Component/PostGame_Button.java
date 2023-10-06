@@ -77,7 +77,7 @@ public class PostGame_Button  extends JButton implements ActionListener, MeiDOTA
                 System.out.println("Oki connecting");
 
                 MatchDetailsParser matchDetailsParser = new MatchDetailsParser();
-                JsonObject match = getMatchDetails.getFullMatchDetailsById("7340504781");
+                JsonObject match = getMatchDetails.getFullMatchDetailsById();
                 matchDetailsParser.getPlayersFromJsonObject(match);
                 System.out.println("hero id: " + matchDetailsParser.getPlayersFromJsonObject(match).get(1).getAsJsonObject().get("hero_id"));
 
