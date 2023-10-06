@@ -1,6 +1,7 @@
 package MeiDOTAnaka.GUI_Components.Items;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,9 +13,11 @@ public class ItemsOptions_Panel extends JPanel implements ActionListener {
     private JButton filterByDamage_filteringOptionButton;
     private JButton filterByControl_filteringOptionButton;
     private JComboBox<String> viewOptions_ComboBox;
+    private DefaultTableModel defaultTableModel;
+    JTable items_table;
 
     public ItemsOptions_Panel(){
-        setLayout(new GridLayout(1,2));
+        setLayout(new GridLayout(1,2,30,0));
 
         filteringOptions_Panel = new JPanel();
         filteringOptions_Panel.setLayout(new GridLayout(1,5));
@@ -52,22 +55,37 @@ public class ItemsOptions_Panel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == filterByMobility_filteringOptionButton){
             System.out.println("filterByMobility_filteringOptionButton");
+            defaultTableModel.setRowCount(0);
+            defaultTableModel.addRow(new Object[]{"Yay I was added after click filterByMobility_filteringOptionButton"});
         }
 
         if (e.getSource() == filterByAttackSpeed_filteringOptionButton){
             System.out.println("filterByAttackSpeed_filteringOptionButton");
+            defaultTableModel.setRowCount(0);
+            defaultTableModel.addRow(new Object[]{"Yay I was added after click filterByAttackSpeed_filteringOptionButton"});
         }
 
         if (e.getSource() == filterByDamage_filteringOptionButton){
             System.out.println("filterByDamage_filteringOptionButton");
+            defaultTableModel.setRowCount(0);
+            defaultTableModel.addRow(new Object[]{"Yay I was added after click filterByDamage_filteringOptionButton"});
         }
 
         if (e.getSource() == filterByControl_filteringOptionButton){
             System.out.println("filterByControl_filteringOptionButton");
+            defaultTableModel.setRowCount(0);
+            defaultTableModel.addRow(new Object[]{"Yay I was added after click filterByControl_filteringOptionButton"});
         }
 
         if (e.getSource() == viewOptions_ComboBox){
             System.out.println("viewOptions_ComboBox");
+            defaultTableModel.setRowCount(0);
+            defaultTableModel.addRow(new Object[]{"Yay I was added after click viewOptions_ComboBox"});
         }
+    }
+
+    public void setTable(JTable items_table, DefaultTableModel defaultTableModel){
+        this.items_table = items_table;
+        this.defaultTableModel = defaultTableModel;
     }
 }
