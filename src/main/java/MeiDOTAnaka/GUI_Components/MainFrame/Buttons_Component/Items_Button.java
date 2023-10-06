@@ -1,5 +1,6 @@
 package MeiDOTAnaka.GUI_Components.MainFrame.Buttons_Component;
 
+import MeiDOTAnaka.GUI_Components.MainFrame.Buttons_Component.MeiDOTAnaka_Button;
 import MeiDOTAnaka.GUI_Components.MainFrame.MainPanel.State_Panel;
 import MeiDOTAnaka.GUI_Components.MainFrame.MeiDOTAnakaFrrame_m;
 import MeiDOTAnaka.GUI_Components.MainFrame.Selected_Component.Selected_Panel;
@@ -20,8 +21,8 @@ public class Items_Button extends JButton implements ActionListener, MeiDOTAnaka
     public Items_Button() {
         setBackground(null);
         setFocusable(false);
-        setText("Players");
-        setName("players_button");
+        setText("Items");
+        setName("items_button");
         try {
             Font font = Font.createFont(Font.TRUETYPE_FONT, new File("src\\main\\java\\MeiDOTAnaka\\Resources\\Fonts\\OldEnglishTextMT.ttf"));
             Font sizedFont = font.deriveFont(Font.BOLD, 28f);
@@ -38,7 +39,7 @@ public class Items_Button extends JButton implements ActionListener, MeiDOTAnaka
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
             switchPanel();
-            state_panel.selected_panel.selectedLabel.setText("Players");
+            state_panel.selected_panel.selectedLabel.setText("Items");
         }
     }
 
@@ -53,11 +54,11 @@ public class Items_Button extends JButton implements ActionListener, MeiDOTAnaka
     public void switchPanel() {
         // seems like using invoke later is more thread safe, but idk.
         SwingUtilities.invokeLater(() -> {
-            selectedPanel.selectedLabel.setText("Players");
+            selectedPanel.selectedLabel.setText("Items");
 
             state_panel.remove(state_panel.current_panel);
-            state_panel.add(state_panel.players_panel, state_panel.gridBagConstraints);
-            state_panel.current_panel = state_panel.players_panel;
+            state_panel.add(state_panel.items_panel, state_panel.gridBagConstraints);
+            state_panel.current_panel = state_panel.items_panel;
 
             meiDOTAnakaFrame.revalidate();
             meiDOTAnakaFrame.repaint();
