@@ -12,12 +12,12 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 
-public class Players_Button extends JButton implements ActionListener, MeiDOTAnaka_Button {
+public class Items_Button extends JButton implements ActionListener, MeiDOTAnaka_Button {
     MeiDOTAnakaFrrame_m meiDOTAnakaFrame;
     Selected_Panel selectedPanel;
     State_Panel state_panel;
 
-    public Players_Button() {
+    public Items_Button() {
         setBackground(null);
         setFocusable(false);
         setText("Players");

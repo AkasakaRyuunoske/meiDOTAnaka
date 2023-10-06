@@ -30,7 +30,7 @@ public class ImportConfigFile_Button extends JButton implements ActionListener {
             configurationManager.applyConfiguration(meiDOTAnakaFrame.getButtons_panel().postGame_button);
             configurationManager.applyConfiguration(meiDOTAnakaFrame.getButtons_panel().cringeList_button);
             configurationManager.applyConfiguration(meiDOTAnakaFrame.getButtons_panel().graphs_button);
-            configurationManager.applyConfiguration(meiDOTAnakaFrame.getButtons_panel().players_button);
+            configurationManager.applyConfiguration(meiDOTAnakaFrame.getButtons_panel().items_button);
         }
     }
 }
