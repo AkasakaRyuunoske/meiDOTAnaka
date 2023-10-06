@@ -13,14 +13,30 @@ public class HeroItemsAndBuffs_Panel extends JLabel {
     public HeroInventory_Panel heroInventory_panel;
 
     public HeroItemsAndBuffs_Panel(){
-        setLayout(new GridLayout(1,3));
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+
+        setLayout(new GridBagLayout());
 
         heroInventory_panel = new HeroInventory_Panel();
         heroItemBuffs_panel = new HeroItemBuffs_Panel();
         heroSkillBuffs_panel = new HeroSkillBuffs_Panel();
 
-        add(heroSkillBuffs_panel);
-        add(heroInventory_panel);
-        add(heroItemBuffs_panel);
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.3;
+        gridBagConstraints.weighty = 1.0;
+
+        add(heroSkillBuffs_panel, gridBagConstraints);
+
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+
+        add(heroInventory_panel, gridBagConstraints);
+
+        gridBagConstraints.fill = GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 0.3;
+        gridBagConstraints.weighty = 1.0;
+
+        add(heroItemBuffs_panel, gridBagConstraints);
     }
 }
