@@ -28,8 +28,8 @@ public class MeiDOTAnakaFrrame_m extends JFrame {
         buttons_panel = new Buttons_Panel();
 
         gridBagConstraints.fill = GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 0.1; // Panel takes 10% of the screen width
-        gridBagConstraints.weighty = 1.0; // Both panels take full vertical space
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 1.0;
 
         add(buttons_panel, gridBagConstraints);
 
