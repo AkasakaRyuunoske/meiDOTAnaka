@@ -10,7 +10,7 @@ import java.awt.*;
 public class Items_Panel extends JPanel {
     ItemsOptions_Panel itemsOptionsPanel;
     JTable items_table;
-    DefaultTableModel defaultTableModel;
+    public DefaultTableModel defaultTableModel;
     private String[] columns = {"name", "cost", "icon"};
 
     public Items_Panel() {
@@ -30,11 +30,20 @@ public class Items_Panel extends JPanel {
 
         add(itemsOptionsPanel, gridBagConstraints);
 
-        defaultTableModel = new DefaultTableModel();
+        defaultTableModel = new DefaultTableModel() {
+            //  Returning the Class of each column will allow different
+            //  renderers to be used based on Class
+            public Class getColumnClass(int column)
+            {
+                return getValueAt(0, column).getClass();
+            }
+        };
+
         defaultTableModel.setColumnIdentifiers(columns);
 
         items_table = new JTable();
         items_table.setModel(defaultTableModel);
+        items_table.setRowHeight(100);
 
         itemsOptionsPanel.setTable(items_table, defaultTableModel);
 
@@ -49,9 +58,5 @@ public class Items_Panel extends JPanel {
         gridBagConstraints.gridx = 0;
 
         add(table_scrollPane, gridBagConstraints);
-
-        defaultTableModel.addRow(new Object[]{"asd"});
-        defaultTableModel.addRow(new Object[]{"asd"});
-        defaultTableModel.addRow(new Object[]{"asd"});
     }
 }
