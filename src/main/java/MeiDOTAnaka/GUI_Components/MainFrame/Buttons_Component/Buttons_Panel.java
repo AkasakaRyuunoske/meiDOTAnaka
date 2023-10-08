@@ -28,7 +28,6 @@ public class Buttons_Panel extends JPanel {
         postGame_button = new PostGame_Button();
         cringeList_button = new CringeList_Button();
         userInfo_panel = new UserInfo_Panel();
-
         add(config_button);
         add(currentGame_button);
         add(postGame_button);
@@ -60,7 +59,8 @@ public class Buttons_Panel extends JPanel {
         config_button.setContext     (context_frame, context_panel, state_panel);
         currentGame_button.setContext(context_frame, context_panel, state_panel);
         graphs_button.setContext     (context_frame, context_panel, state_panel);
-        items_button.setContext    (context_frame, context_panel, state_panel);
+        items_button.setContext      (context_frame, context_panel, state_panel);
         postGame_button.setContext   (context_frame, context_panel, state_panel);
+        items_button.setContext      (context_frame, context_panel, state_panel);
     }
 }
