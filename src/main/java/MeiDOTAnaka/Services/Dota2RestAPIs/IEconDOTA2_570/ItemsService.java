@@ -9,12 +9,31 @@ import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.net.*;
+import java.util.List;
+import java.util.Map;
 
 public class ItemsService {
     public JsonObject getAllItems(){
         try {
+            System.out.println(ResponseCache.getDefault() + " get default response cache");
+
+            ResponseCache responseCache = new ResponseCache() {
+                @Override
+                public CacheResponse get(URI uri, String requestMethod, Map<String, List<String>> requestHeaders) throws IOException {
+                    return null;
+                }
+
+                @Override
+                public CacheRequest put(URI uri, URLConnection conn) throws IOException {
+                    return null;
+                }
+            };
+
+            ResponseCache.setDefault(responseCache);
+
+            System.out.println(ResponseCache.getDefault() + " get default response cache");
+
             GsonBuilder builder = new GsonBuilder();
             Gson gson = builder.create();
 
@@ -22,13 +41,15 @@ public class ItemsService {
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod("GET");
 
-            BufferedReader in = new BufferedReader(
-                    new InputStreamReader(httpURLConnection.getInputStream()));
+            BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+
             String inputLine;
             StringBuffer content = new StringBuffer();
+
             while ((inputLine = in.readLine()) != null) {
                 content.append(inputLine);
             }
+
             in.close();
             httpURLConnection.disconnect();
 
