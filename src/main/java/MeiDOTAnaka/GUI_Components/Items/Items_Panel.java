@@ -1,15 +1,17 @@
 package MeiDOTAnaka.GUI_Components.Items;
 
 import MeiDOTAnaka.GUI_Components.PostGame.Panels.HeroItemsAndBuffs_Panel;
+import MeiDOTAnaka.MeiDOTAnakaApp;
 import org.checkerframework.checker.units.qual.C;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 
 public class Items_Panel extends JPanel {
     ItemsOptions_Panel itemsOptionsPanel;
-    JTable items_table;
+    public JTable items_table;
     public DefaultTableModel defaultTableModel;
     private String[] columns = {"name", "cost", "icon"};
 
@@ -41,7 +43,28 @@ public class Items_Panel extends JPanel {
 
         defaultTableModel.setColumnIdentifiers(columns);
 
-        items_table = new JTable();
+        items_table = new JTable(){
+            //Implement table cell tool tips.
+            public String getToolTipText(MouseEvent e) {
+                String tip = "nothing";
+                java.awt.Point p = e.getPoint();
+                int rowIndex = rowAtPoint(p);
+                int colIndex = columnAtPoint(p);
+
+                try {
+                    //comment row, exclude heading
+                    if(rowIndex != 0){
+                        tip = getValueAt(rowIndex, colIndex).toString();
+//                        System.out.println("Mouse point: " + p.x + " " + p.y);
+                    }
+                } catch (RuntimeException e1) {
+                    //catch null pointer exception if mouse is over an empty line
+                }
+
+                return tip;
+            }
+        };
+
         items_table.setModel(defaultTableModel);
         items_table.setRowHeight(100);
 

@@ -52,7 +52,7 @@ public class Items_Button extends JButton implements ActionListener, MeiDOTAnaka
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
             switchPanel();
-            connect();
+            itemsService.connect();
         }
     }
 
@@ -76,78 +76,5 @@ public class Items_Button extends JButton implements ActionListener, MeiDOTAnaka
             meiDOTAnakaFrame.revalidate();
             meiDOTAnakaFrame.repaint();
         });
-    }
-
-    private void connect() {
-        Thread thread = new Thread(() -> {
-            JsonObject allItemsJSON = itemsService.getAllItems();
-
-            Iterator<String> iterator = allItemsJSON.keySet().iterator();
-
-            try {
-                int i = 0;
-                Image image;
-                URL url;
-
-                JFrame frame = new JFrame("Progress...");
-                JProgressBar downloadProgressBar = new JProgressBar(0, 50);
-                downloadProgressBar.setString("Download progress...");
-                downloadProgressBar.setStringPainted(true);
-                downloadProgressBar.setOpaque(true);
-
-                frame.add(downloadProgressBar);
-                frame.setLocationRelativeTo(meiDOTAnakaFrame.getState_panel().current_panel);
-                frame.setResizable(false);
-                frame.setAlwaysOnTop(true);
-                frame.pack();
-                frame.setVisible(true);
-
-                Random random = new Random();
-
-                JsonObject item;
-                String itemJson;
-                while (iterator.hasNext() && i < 50) {
-                    itemJson = iterator.next();
-                    item = allItemsJSON.getAsJsonObject(itemJson);
-
-                    downloadProgressBar.setValue(i);
-                    downloadProgressBar.setString("Download progress... %" + i);
-                    downloadProgressBar.setBackground(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
-                    downloadProgressBar.setForeground(new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)));
-
-                    System.out.println("Download of item images in progress... %" + i);
-
-                    i++;
-                    url = new URL("https://api.opendota.com" + item.get("img").toString().replaceAll("\"", ""));
-                    image = ImageIO.read(url);
-
-//                    itemJson = itemJson.replaceAll("_", " ");
-
-                    itemJson = itemJson.replaceFirst(String.valueOf(itemJson.charAt(0)), String.valueOf(itemJson.charAt(0)).toUpperCase());
-
-                    int count = itemJson.length() - itemJson.replace("_", "").length();
-
-                    for (int j = 0; j < count; j++) {
-                        itemJson = itemJson.replace(
-                                String.valueOf(itemJson.charAt(itemJson.indexOf("_"))) + String.valueOf(itemJson.charAt(itemJson.indexOf("_") + 1)),
-                                " " + String.valueOf(itemJson.charAt(itemJson.indexOf("_") + 1)).toUpperCase()
-                        );
-                    }
-
-                    state_panel.items_panel.defaultTableModel.addRow(new Object[]{
-                            itemJson,
-                            item.get("cost").toString(),
-                            new ImageIcon(image)
-                    });
-                }
-
-                frame.setVisible(false);
-
-            } catch (IOException ioException) {
-                System.out.println("shit happends: " + ioException.getMessage());
-            }
-        });
-
-        thread.start();
     }
 }
