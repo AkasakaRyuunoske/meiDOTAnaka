@@ -54,7 +54,7 @@ public class GetMatchDetails {
         }
     }
 
-    public JsonObject getFullMatchDetailsById(String match_id) throws IOException {
+    public JsonObject getFullMatchDetailsById() throws IOException {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
 
@@ -75,7 +75,6 @@ public class GetMatchDetails {
         System.out.println(content.toString());
 
         JsonObject response_json = new JsonParser().parse(content.toString()).getAsJsonObject();
-
 
         System.out.println("response_json: "         + response_json);
 

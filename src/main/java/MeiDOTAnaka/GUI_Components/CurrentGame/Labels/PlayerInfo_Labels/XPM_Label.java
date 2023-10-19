@@ -1,9 +1,19 @@
 package MeiDOTAnaka.GUI_Components.CurrentGame.Labels.PlayerInfo_Labels;
 
-import javax.swing.*;
+import MeiDOTAnaka.GUI_Components.CurrentGame.Labels.DynamicLabel;
 
-public class XPM_Label extends JLabel {
+import javax.swing.*;
+import java.awt.*;
+
+public class XPM_Label extends JLabel implements DynamicLabel {
+    String text = "Current XPM: ";
     public XPM_Label(){
-        setText("Current XPM: ");
+        setForeground(Color.magenta);
+        setText(text);
+    }
+
+    @Override
+    public void updateText(String newText) {
+        setText(text + newText);
     }
 }

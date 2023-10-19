@@ -13,40 +13,6 @@ public class GSS {
     MeiDOTAnakaFrrame_m meiDOTAnakaFrrame_m;
     static JDA chloyena;
 
-        // OLD CRINGE FRAME
-        // Deprecated
-//        frame = new JFrame("Yay mokson is not that bad )0)");
-//        GPM_label = new JLabel();
-//        XPM_label = new JLabel();
-//        hero_name_label = new JLabel();
-//        gold_from_creeps_label = new JLabel();
-//        gold_from_kills_label = new JLabel();
-//        actions_label = new JLabel();
-//
-//        GPM_label.setText("Not yet started");
-//        XPM_label.setText("Not yet started");
-//        hero_name_label.setText("Not yet started");
-//        gold_from_creeps_label.setText("Not yet started");
-//        gold_from_kills_label.setText("Not yet started");
-//        actions_label.setText("Not yet started");
-//
-//        frame.setBounds(0,0,500,500);
-//        frame.setLayout(new GridLayout(3,3));
-//
-//        frame.add(hero_name_label);
-//
-//        frame.add(GPM_label);
-//        frame.add(gold_from_creeps_label);
-//        frame.add(gold_from_kills_label);
-//
-//        frame.add(XPM_label);
-//
-//        frame.add(actions_label);
-//
-//        frame.setVisible(true);
-
-        // Till here
-
 //        chloyena = JDABuilder.createDefault("MTE0NTc4MjQ0MjM0NzczMzAzMw.GWS3za.liacSnqHC6p-fZX9R6zjtFwWZjOK59AaFkoAAA")
 //                .setActivity(Activity.competing("With life"))
 //                .addEventListeners(new MeiDOTAnaka.Services.Discord.ChloyenaBOT())
@@ -150,20 +116,10 @@ public class GSS {
                 System.out.println("getRadiantScore(): " + newState.getMap().getRadiantScore());
 
                 System.out.println(newState.getHero().getAttributesLevel());
-//                System.out.println(newState.getHero().);
-
                 System.out.println(newState.getPlayer());
                 System.out.println(newState.getMap());
-//
-//                System.out.println();
                 System.out.println(newState.getPlayer().getGold());
 
-//                meiDOTAnakaFrame.updatePanels(
-//                        String.valueOf(newState.getPlayer().getCommandsIssued()),
-//                        String.valueOf(newState.getPlayer().getGpm()),
-//                        String.valueOf(newState.getPlayer().getXpm()),
-//                        String.valueOf(newState.getPlayer().getGold())
-//                );
             }
         }
 

@@ -40,7 +40,6 @@ public class ConfigurationManager {
     }
 
     public void readConfigurationFile(){
-        fileContents = "";
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(configurationFile))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
@@ -82,6 +81,7 @@ public class ConfigurationManager {
     public String getValueFromConfigurationFile(String type, int index, String key){
         // if file wasn't read yet then we read it using default path
         if (configurationFile == null) {
+            System.out.println("Configuration file is indeed null");
             readConfigurationFile(true);
         }
 

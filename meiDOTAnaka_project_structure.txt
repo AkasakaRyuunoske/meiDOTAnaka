@@ -114,4 +114,4 @@
             |    |---+ placeholder.txt
             |
             |
-        |---#> MeiDOTAnakaApp.java
+        |---#> MeiDOTAnaka.MeiDOTAnakaApp.java

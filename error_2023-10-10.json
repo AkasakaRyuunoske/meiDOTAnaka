@@ -1,0 +1,317 @@
+{
+	"provider": {
+		"name": "Dota 2",
+		"appid": 570,
+		"version": 47,
+		"timestamp": 1696949897
+	},
+	"map": {
+		"name": "start",
+		"matchid": "7375351007",
+		"game_time": 1284,
+		"clock_time": 1179,
+		"daytime": false,
+		"nightstalker_night": false,
+		"radiant_score": 0,
+		"dire_score": 0,
+		"game_state": "DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
+		"paused": false,
+		"win_team": "none",
+		"customgamename": "",
+		"ward_purchase_cooldown": 0
+	},
+	"player": {
+		"steamid": "76561198401349803",
+		"accountid": "441084075",
+		"name": "mode: demon eater",
+		"activity": "playing",
+		"kills": 0,
+		"deaths": 0,
+		"assists": 0,
+		"last_hits": 0,
+		"denies": 0,
+		"kill_streak": 0,
+		"commands_issued": 24,
+		"kill_list": {
+
+		},
+		"team_name": "radiant",
+		"player_slot": 1,
+		"team_slot": 0,
+		"gold": 2497,
+		"gold_reliable": 1807,
+		"gold_unreliable": 690,
+		"gold_from_hero_kills": 0,
+		"gold_from_creep_kills": 0,
+		"gold_from_income": 1807,
+		"gold_from_shared": 0,
+		"gpm": 96,
+		"xpm": 12
+	},
+	"hero": {
+		"xpos": -6814,
+		"ypos": -6393,
+		"id": 13,
+		"name": "npc_dota_hero_puck",
+		"level": 2,
+		"xp": 240,
+		"alive": true,
+		"respawn_seconds": 0,
+		"buyback_cost": 399,
+		"buyback_cooldown": 0,
+		"health": 538,
+		"max_health": 538,
+		"health_percent": 100,
+		"mana": 387,
+		"max_mana": 387,
+		"mana_percent": 100,
+		"silenced": false,
+		"stunned": false,
+		"disarmed": false,
+		"magicimmune": false,
+		"hexed": false,
+		"muted": false,
+		"break": false,
+		"aghanims_scepter": false,
+		"aghanims_shard": false,
+		"smoked": false,
+		"has_debuff": false,
+		"talent_1": false,
+		"talent_2": false,
+		"talent_3": false,
+		"talent_4": false,
+		"talent_5": false,
+		"talent_6": false,
+		"talent_7": false,
+		"talent_8": false,
+		"attributes_level": 0
+	},
+	"abilities": {
+		"ability0": {
+			"name": "puck_illusory_orb",
+			"level": 1,
+			"can_cast": true,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability1": {
+			"name": "puck_waning_rift",
+			"level": 0,
+			"can_cast": false,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability2": {
+			"name": "puck_phase_shift",
+			"level": 0,
+			"can_cast": false,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability3": {
+			"name": "puck_ethereal_jaunt",
+			"level": 1,
+			"can_cast": false,
+			"passive": false,
+			"ability_active": false,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability4": {
+			"name": "puck_dream_coil",
+			"level": 0,
+			"can_cast": false,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": true
+		},
+		"ability5": {
+			"name": "plus_high_five",
+			"level": 1,
+			"can_cast": true,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		},
+		"ability6": {
+			"name": "plus_guild_banner",
+			"level": 1,
+			"can_cast": true,
+			"passive": false,
+			"ability_active": true,
+			"cooldown": 0,
+			"ultimate": false
+		}
+	},
+	"items": {
+		"slot0": {
+			"name": "empty"
+		},
+		"slot1": {
+			"name": "empty"
+		},
+		"slot2": {
+			"name": "empty"
+		},
+		"slot3": {
+			"name": "empty"
+		},
+		"slot4": {
+			"name": "empty"
+		},
+		"slot5": {
+			"name": "empty"
+		},
+		"slot6": {
+			"name": "empty"
+		},
+		"slot7": {
+			"name": "empty"
+		},
+		"slot8": {
+			"name": "empty"
+		},
+		"stash0": {
+			"name": "empty"
+		},
+		"stash1": {
+			"name": "empty"
+		},
+		"stash2": {
+			"name": "empty"
+		},
+		"stash3": {
+			"name": "empty"
+		},
+		"stash4": {
+			"name": "empty"
+		},
+		"stash5": {
+			"name": "empty"
+		},
+		"teleport0": {
+			"name": "item_tpscroll",
+			"purchaser": 0,
+			"item_level": 1,
+			"can_cast": true,
+			"cooldown": 0,
+			"passive": false,
+			"charges": 1
+		},
+		"neutral0": {
+			"name": "empty"
+		}
+	},
+	"buildings": {
+		"radiant": {
+			"dota_goodguys_tower1_top": {
+				"health": 153,
+				"max_health": 1800
+			},
+			"dota_goodguys_tower2_top": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower3_top": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower1_mid": {
+				"health": 1065,
+				"max_health": 1800
+			},
+			"dota_goodguys_tower2_mid": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower3_mid": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower1_bot": {
+				"health": 250,
+				"max_health": 1800
+			},
+			"dota_goodguys_tower2_bot": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower3_bot": {
+				"health": 2500,
+				"max_health": 2500
+			},
+			"dota_goodguys_tower4_top": {
+				"health": 2600,
+				"max_health": 2600
+			},
+			"dota_goodguys_tower4_bot": {
+				"health": 2600,
+				"max_health": 2600
+			},
+			"good_rax_melee_top": {
+				"health": 2200,
+				"max_health": 2200
+			},
+			"good_rax_range_top": {
+				"health": 1300,
+				"max_health": 1300
+			},
+			"good_rax_melee_mid": {
+				"health": 2200,
+				"max_health": 2200
+			},
+			"good_rax_range_mid": {
+				"health": 1300,
+				"max_health": 1300
+			},
+			"good_rax_melee_bot": {
+				"health": 2200,
+				"max_health": 2200
+			},
+			"good_rax_range_bot": {
+				"health": 1300,
+				"max_health": 1300
+			},
+			"dota_goodguys_fort": {
+				"health": 4500,
+				"max_health": 4500
+			}
+		}
+	},
+	"draft": {
+
+	},
+	"wearables": {
+		"wearable0": 7758,
+		"wearable1": 6671,
+		"wearable2": 13767,
+		"wearable3": 8632,
+		"wearable4": 510,
+		"wearable5": 790,
+		"wearable6": 793,
+		"wearable7": 13816
+	},
+	"events": [
+
+	]
+	,
+	"previously": {
+		"map": {
+			"game_time": 1283,
+			"clock_time": 1178
+		},
+		"player": {
+			"gold": 2495,
+			"gold_reliable": 1805,
+			"gold_from_income": 1805
+		}
+	}
+}

@@ -36,6 +36,7 @@ public class ProjectStructureGenerator {
             } else {
                 if (directory_spaces > 0 && (spaces - directory_spaces) >= 4)  System.out.println(space.repeat(directory_spaces) + "|" + space.repeat(spaces - directory_spaces) + "|---+ " + file.getName());
                 else System.out.println(space.repeat(spaces) + "|---#> " + file.getName());
+
             }
 
         }
