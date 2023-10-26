@@ -24,6 +24,10 @@ public class GetMatchDetails {
         System.out.println("DOTA_ACCOUNT_ID: " + DOTA_ACCOUNT_ID);
     }
 
+    /**
+     *  Returns id of last played match by DOTA_ACCOUNT_ID calling at /api.opendota.com/.../recentMatches endpoint
+     *
+     * */
     public String getLastMatchId(){
         try {
             URL url = new URL("https://api.opendota.com/api/players/" + DOTA_ACCOUNT_ID + "/recentMatches");
@@ -55,9 +59,6 @@ public class GetMatchDetails {
     }
 
     public JsonObject getFullMatchDetailsById() throws IOException {
-        GsonBuilder builder = new GsonBuilder();
-        Gson gson = builder.create();
-
         URL url = new URL("https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/v1?key=&match_id=" + getLastMatchId());
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
         httpURLConnection.setRequestMethod("GET");

@@ -4,22 +4,14 @@ import MeiDOTAnaka.GUI_Components.MainFrame.MainPanel.State_Panel;
 import MeiDOTAnaka.GUI_Components.MainFrame.MeiDOTAnakaFrrame_m;
 import MeiDOTAnaka.GUI_Components.MainFrame.Selected_Component.Selected_Panel;
 import MeiDOTAnaka.Services.Dota2RestAPIs.IEconDOTA2_570.ItemsService;
-import com.google.gson.JsonObject;
-import netscape.javascript.JSObject;
 import org.jetbrains.annotations.NotNull;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Random;
-import java.util.Set;
 
 public class Items_Button extends JButton implements ActionListener, MeiDOTAnaka_Button {
     MeiDOTAnakaFrrame_m meiDOTAnakaFrame;
@@ -52,7 +44,7 @@ public class Items_Button extends JButton implements ActionListener, MeiDOTAnaka
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
             switchPanel();
-            itemsService.connect();
+            itemsService.downloadAndDisplayItemImages();
         }
     }
 

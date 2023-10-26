@@ -5,6 +5,8 @@ import MeiDOTAnaka.GUI_Components.MainFrame.MeiDOTAnakaFrrame_m;
 import MeiDOTAnaka.GUI_Components.MainFrame.Selected_Component.Selected_Panel;
 import MeiDOTAnaka.Services.Dota2RestAPIs.Dota2MatchAPI_570.GetMatchDetails;
 import MeiDOTAnaka.Services.Dota2RestAPIs.Dota2MatchAPI_570.MatchDetailsParser;
+import MeiDOTAnaka.Services.Dota2RestAPIs.IEconDOTA2_570.HeroesService;
+import MeiDOTAnaka.Services.Dota2RestAPIs.IEconDOTA2_570.ItemsService;
 import com.google.gson.JsonObject;
 import org.jetbrains.annotations.NotNull;
 
@@ -14,11 +16,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.util.EmptyStackException;
+import java.util.Stack;
 
 public class PostGame_Button  extends JButton implements ActionListener, MeiDOTAnaka_Button {
     MeiDOTAnakaFrrame_m meiDOTAnakaFrame;
     Selected_Panel selectedPanel;
     State_Panel state_panel;
+    ItemsService itemsService;
     GetMatchDetails getMatchDetails = new GetMatchDetails();
 
     public PostGame_Button(){
@@ -116,17 +121,80 @@ public class PostGame_Button  extends JButton implements ActionListener, MeiDOTA
                                 + you_as_player.get("denies").toString()
                         );
 
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_1.setText(you_as_player.get("item_0").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_2.setText(you_as_player.get("item_1").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_3.setText(you_as_player.get("item_2").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_4.setText(you_as_player.get("item_3").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_5.setText(you_as_player.get("item_4").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_6.setText(you_as_player.get("item_5").toString());
+                //############################## Icons ################################
 
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_1.setText(you_as_player.get("backpack_0").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_2.setText(you_as_player.get("backpack_1").toString());
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_3.setText(you_as_player.get("backpack_2").toString());
+                // contains items with which player finished the game
+                Stack<String> usedItems = new Stack<>();
+                for (int j = 0; j < 6; j++) {
+                    usedItems.push(you_as_player.get("item_" + j).toString());
+                }
+                usedItems.push(you_as_player.get("backpack_0").toString());
+                usedItems.push(you_as_player.get("backpack_1").toString());
+                usedItems.push(you_as_player.get("backpack_2").toString());
 
+                usedItems.push(you_as_player.get("item_neutral").toString());
+
+                itemsService = new ItemsService();
+                JsonObject usedItemIds = itemsService.getAllItemIds();
+
+                Stack<String> usedItemNames = new Stack<>();
+                for (int j = 0; j < 10; j++) {
+                    // 0 is defined as empty slot by vulvo
+                    if (usedItems.peek().equals("0")){
+                        usedItems.pop();
+                        continue;
+                    }
+
+                    usedItemNames.push(usedItemIds.get(usedItems.pop()).toString());
+                }
+
+                JsonObject itemsIcons = itemsService.getAllItems();
+
+                System.out.println("usedItemNames: " + usedItemNames);
+//                for (int j = 0; j < usedItemNames.size(); j++) {
+//                    // 0 is defined as empty slot by vulvo
+////                    if (usedItems.peek().equals("0")){
+////                        usedItems.pop();
+////                        continue;
+////                    }
+//                    System.out.println(usedItems.push(itemsIcons.get(usedItemNames.pop().replaceAll("\"","")).getAsJsonObject().get("img").toString()));
+//                }
+
+                try {
+                    while (usedItems.push(itemsIcons.get(usedItemNames.pop().replaceAll("\"","")).getAsJsonObject().get("img").toString()) != null);
+
+                } catch (EmptyStackException emptyStackException) {
+                    System.out.println("okay, finished staking");
+                }
+
+                System.out.println("item icons: " + usedItems);
+
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_1.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_2.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_3.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_4.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_5.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_6.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_1.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_2.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+//                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_3.setText(usedItems.pop()); #todo don't forget
+
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_7_neutral.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_7_neutral.setText("");
+
+                System.out.println("you_as_player: " + you_as_player);
+
+                //#todo remove this dialog AFTER YOU RESOLVED THE WRONG ORDER ISSUE
+                JOptionPane.showConfirmDialog(null, "Remember that they are in WRONG ORDER (basically random order)", "AHTUNG", JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE);
+
+
+                //############################## Hero Image ################################
+                HeroesService heroesService = new HeroesService();
+                JsonObject allHeroes = heroesService.getAllHeroes();
+                JsonObject playedHero = allHeroes.getAsJsonObject(you_as_player.get("hero_id").getAsString());
+
+                state_panel.postGame_panel.heroImportantStats_panel.hero_panel.getHero_image().setIcon(heroesService.getHeroIconByUrl(playedHero.get("img").getAsString()));
             } else {
                 System.err.println("Something went wrong. Probably swing took too much to switch panels");
             }
