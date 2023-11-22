@@ -15,25 +15,28 @@ public class Buttons_Panel extends JPanel {
     public Items_Button items_button;
     public PostGame_Button postGame_button;
     public CringeList_Button cringeList_button;
+    public OOPingButton ooPingButton;
     UserInfo_Panel userInfo_panel;
 
     public Buttons_Panel(){
         setBackground(Color.black);
         setLayout(new GridLayout(10, 1));
 
-        config_button = new Config_Button();
+        config_button      = new Config_Button();
         currentGame_button = new CurrentGame_Button();
-        graphs_button = new Graphs_Button();
-        items_button = new Items_Button();
-        postGame_button = new PostGame_Button();
-        cringeList_button = new CringeList_Button();
-        userInfo_panel = new UserInfo_Panel();
+        graphs_button      = new Graphs_Button();
+        items_button       = new Items_Button();
+        postGame_button    = new PostGame_Button();
+        cringeList_button  = new CringeList_Button();
+        ooPingButton       = new OOPingButton();
+
         add(config_button);
         add(currentGame_button);
         add(postGame_button);
         add(graphs_button);
         add(items_button);
         add(cringeList_button);
+        add(ooPingButton);
 
         // placeholders for if I decide to put more elements here. For now they just separate buttons from user info
 //        add(new JLabel());
@@ -50,9 +53,9 @@ public class Buttons_Panel extends JPanel {
         add(blue_part);
         add(yellow_part);
 
-        add(new JLabel());
-
+        userInfo_panel = new UserInfo_Panel();
         add(userInfo_panel);
+
     }
 
     public void setButtonsContext(MeiDOTAnakaFrrame_m context_frame, Selected_Panel context_panel, State_Panel state_panel) {
