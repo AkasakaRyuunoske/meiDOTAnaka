@@ -125,9 +125,11 @@ public class PostGame_Button  extends JButton implements ActionListener, MeiDOTA
 
                 // contains items with which player finished the game
                 Stack<String> usedItems = new Stack<>();
+
                 for (int j = 0; j < 6; j++) {
                     usedItems.push(you_as_player.get("item_" + j).toString());
                 }
+
                 usedItems.push(you_as_player.get("backpack_0").toString());
                 usedItems.push(you_as_player.get("backpack_1").toString());
                 usedItems.push(you_as_player.get("backpack_2").toString());

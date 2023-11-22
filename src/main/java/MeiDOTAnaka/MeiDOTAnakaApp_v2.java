@@ -41,12 +41,30 @@ import java.io.InputStreamReader;
 //}
 
 public class MeiDOTAnakaApp_v2 extends JFrame {
+//    public static void main(String[] args) {
+//
+//        EventQueue.invokeLater(() -> {
+//
+//            var ex = new MeiDOTAnakaApp_v2();
+//            ex.setVisible(true);
+//        });
+//    }
+
     public static void main(String[] args) {
+        JFrame frame = new JFrame();
 
-        EventQueue.invokeLater(() -> {
+        JTextPane jTextArea = new JTextPane();
+        jTextArea.setContentType("text/html");
+        jTextArea.setText("<html>" +
+                            "<body>" +
+                                "<h1 style=\"color: pink\">Ayee</h1>" +
+                            "</body>" +
+                        "</html>");
 
-            var ex = new MeiDOTAnakaApp_v2();
-            ex.setVisible(true);
-        });
+        System.out.println("<html><body><h1 style=\"color: pink\">Ayee</h1></body></html>");
+
+        frame.add(jTextArea);
+        frame.pack();
+        frame.setVisible(true);
     }
 }

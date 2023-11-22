@@ -64,7 +64,7 @@ public class OOPingApp extends JFrame {
         setSize(1280, 720);
         setTitle("OOPing - OOPong");
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        setDefaultCloseOperation(JFrame.);
     }
 
     private JFreeChart createChart() {
