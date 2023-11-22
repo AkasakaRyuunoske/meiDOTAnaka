@@ -24,7 +24,7 @@ public class MeiDOTAnakaFrrame_m extends JFrame {
         setTitle("MeiDOTAnata - Your cringe assistant written by cringe ukrainian refugee");
 
         selected_panel = new Selected_Panel();
-        state_panel = new State_Panel();
+        state_panel = new State_Panel(this);
         buttons_panel = new Buttons_Panel();
 
         gridBagConstraints.fill = GridBagConstraints.BOTH;

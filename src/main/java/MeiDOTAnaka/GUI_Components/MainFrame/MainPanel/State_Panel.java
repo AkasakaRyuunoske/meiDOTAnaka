@@ -4,6 +4,7 @@ import MeiDOTAnaka.GUI_Components.Config.Config_Panel;
 import MeiDOTAnaka.GUI_Components.CurrentGame.CurrentGame_Panel;
 import MeiDOTAnaka.GUI_Components.Graphs.Graphs_Panel;
 import MeiDOTAnaka.GUI_Components.Items.Items_Panel;
+import MeiDOTAnaka.GUI_Components.MainFrame.MeiDOTAnakaFrrame_m;
 import MeiDOTAnaka.GUI_Components.MainFrame.Selected_Component.Selected_Panel;
 import MeiDOTAnaka.GUI_Components.Players.Players_Panel;
 import MeiDOTAnaka.GUI_Components.PostGame.PostGame_Panel;
@@ -24,12 +25,16 @@ public class State_Panel extends JPanel {
 
     public GridBagConstraints gridBagConstraints;
 
-    public State_Panel(){
+    private MeiDOTAnakaFrrame_m meiDOTAnakaFrrame_m;
+
+    public State_Panel(MeiDOTAnakaFrrame_m meiDOTAnakaFrrame_m){
+        this.meiDOTAnakaFrrame_m = meiDOTAnakaFrrame_m;
+
         gridBagConstraints = new GridBagConstraints();
         setLayout(new GridBagLayout());
         setBackground(Color.BLACK);
 
-        config_panel = new Config_Panel();
+        config_panel = new Config_Panel(meiDOTAnakaFrrame_m);
         postGame_panel = new PostGame_Panel();
         players_panel = new Players_Panel();
         graphs_panel = new Graphs_Panel();

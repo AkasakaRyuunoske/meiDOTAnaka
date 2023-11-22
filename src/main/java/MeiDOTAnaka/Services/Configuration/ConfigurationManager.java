@@ -16,7 +16,7 @@ public class ConfigurationManager {
 
     private String PATH_TO_CONFIG = "D:\\meiDO_TAnaka\\meiDO_TAnaka\\test.cringe";
 
-    public File getConfigurationFile() {
+    public File chooseConfigurationFile() {
         JFileChooser fileChooser = new JFileChooser(".");
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Cringe files only", "cringe");
 
@@ -39,7 +39,24 @@ public class ConfigurationManager {
         return selectedFile;
     }
 
-    public void readConfigurationFile(){
+    public String readFile(File file){
+        String fileData = "";
+
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+                fileData += line + "\n";
+            }
+            System.out.println("File data: " + fileData);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return fileData;
+    }
+
+    public void readAndParseConfigurationFile(){
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(configurationFile))) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
@@ -52,9 +69,11 @@ public class ConfigurationManager {
         }
 
         parseConfigurationFile();
+
+//        return fileContents;
     }
 
-    public void readConfigurationFile(boolean useDefaultPath){
+    public void readAndParseConfigurationFile(boolean useDefaultPath){
         fileContents = "";
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(PATH_TO_CONFIG))) {
             String line;
@@ -82,7 +101,7 @@ public class ConfigurationManager {
         // if file wasn't read yet then we read it using default path
         if (configurationFile == null) {
             System.out.println("Configuration file is indeed null");
-            readConfigurationFile(true);
+            readAndParseConfigurationFile(true);
         }
 
         return parseConfigurationFile().getAsJsonArray(type).get(index).getAsJsonObject().get(key).toString().replaceAll("\"", "");
@@ -118,5 +137,9 @@ public class ConfigurationManager {
             }
 
         }
+    }
+
+    public File getConfigurationFile() {
+        return configurationFile;
     }
 }
