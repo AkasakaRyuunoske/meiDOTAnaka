@@ -178,8 +178,8 @@ public class PostGame_Button  extends JButton implements ActionListener, MeiDOTA
                 state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_5.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
                 state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_6.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
 
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_1.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
-                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_2.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+//                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_1.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
+//                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_2.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));
 //                state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroBackpack_panel.backpack_item_3.setText(usedItems.pop()); #todo don't forget
 
                 state_panel.postGame_panel.heroItemsAndBuffs_panel.heroInventory_panel.heroActiveSlots_panel.item_slot_7_neutral.setIcon(itemsService.getItemImageByUrl(usedItems.pop()));

@@ -27,14 +27,7 @@ public class ImportFile_Button extends JButton implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
             configurationManager.chooseConfigurationFile();
-            configurationManager.readAndParseConfigurationFile();
 
-            configurationManager.applyConfiguration(this);
-            configurationManager.applyConfiguration(meiDOTAnakaFrame.getButtons_panel().currentGame_button);
-            configurationManager.applyConfiguration(meiDOTAnakaFrame.getButtons_panel().postGame_button);
-            configurationManager.applyConfiguration(meiDOTAnakaFrame.getButtons_panel().cringeList_button);
-            configurationManager.applyConfiguration(meiDOTAnakaFrame.getButtons_panel().graphs_button);
-            configurationManager.applyConfiguration(meiDOTAnakaFrame.getButtons_panel().items_button);
 
             configEditorTextArea.setText(configurationManager.readFile(configurationManager.getConfigurationFile()));
         }

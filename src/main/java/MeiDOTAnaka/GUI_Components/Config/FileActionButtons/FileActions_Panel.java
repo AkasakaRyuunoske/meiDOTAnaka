@@ -21,14 +21,15 @@ public class FileActions_Panel extends JPanel {
         setLayout(new GridLayout(1, 5));
         setBackground(Color.CYAN);
 
-        applyFile_button = new ApplyFile_Button();
+        applyFile_button = new ApplyFile_Button(configEditor_textArea, meiDOTAnakaFrame);
         newFile_button = new NewFile_Button();
-        saveFile_button = new SaveFile_Button();
+        saveFile_button = new SaveFile_Button(configEditor_textArea);
         importFile_button = new ImportFile_Button(configEditor_textArea, meiDOTAnakaFrame);
 
         add(applyFile_button);
         add(newFile_button);
         add(saveFile_button);
         add(importFile_button);
+        add(new JLabel("test.cringe"));
     }
 }
