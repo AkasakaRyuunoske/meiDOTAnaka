@@ -18,7 +18,7 @@ public class MeiDOTAnakaFrrame_m extends JFrame {
     public MeiDOTAnakaFrrame_m(){
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
 
-        setSize(1080, 720);
+        setSize(1280, 720);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new GridBagLayout());
         setTitle("MeiDOTAnata - Your cringe assistant written by cringe ukrainian refugee");
