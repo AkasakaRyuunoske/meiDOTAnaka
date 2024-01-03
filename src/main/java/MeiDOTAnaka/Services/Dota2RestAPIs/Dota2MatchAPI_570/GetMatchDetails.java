@@ -59,7 +59,7 @@ public class GetMatchDetails {
     }
 
     public JsonObject getFullMatchDetailsById() throws IOException {
-        URL url = new URL("https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/v1?key=&match_id=" + getLastMatchId());
+        URL url = new URL("https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/v1?key=52318808C107E6D4ED6402A8E42B25E9&match_id=" + getLastMatchId());
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
         httpURLConnection.setRequestMethod("GET");
 

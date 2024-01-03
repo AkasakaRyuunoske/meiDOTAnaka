@@ -12,11 +12,13 @@ public class HeroMP_ProgressBar extends JPanel {
     public HeroMP_ProgressBar(){
         heroMP_Bar = new JProgressBar();
         heroMP_Bar.setMaximum(363);
-        heroMP_Bar.setMinimum(1);
-        heroMP_Bar.setValue(363);
+        heroMP_Bar.setMinimum(0);
+        heroMP_Bar.setValue(0);
         heroMP_Bar.setStringPainted(true);
 
         heroMP_Bar.setBackground(Color.BLUE);
+
+        heroMP_Bar.setString("363/363");
 
         add(heroMP_Bar);
     }
