@@ -40,6 +40,7 @@ public class CringeList_Button extends JButton implements ActionListener, MeiDOT
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
             System.out.println("cringe list was called");
+            switchPanel();
         }
     }
 
@@ -52,6 +53,14 @@ public class CringeList_Button extends JButton implements ActionListener, MeiDOT
 
     @Override
     public void switchPanel() {
+        SwingUtilities.invokeLater(() -> {
+            selectedPanel.selectedLabel.setText("Cringe List");
+            state_panel.remove(state_panel.current_panel);
+            state_panel.add(state_panel.cringeList_panel, state_panel.gridBagConstraints);
+            state_panel.current_panel = state_panel.cringeList_panel;
 
+            meiDOTAnakaFrame.revalidate();
+            meiDOTAnakaFrame.repaint();
+        });
     }
 }

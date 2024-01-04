@@ -1,6 +1,7 @@
 package MeiDOTAnaka.GUI_Components.MainFrame.MainPanel;
 
 import MeiDOTAnaka.GUI_Components.Config.Config_Panel;
+import MeiDOTAnaka.GUI_Components.CringeList.Panels.CringeList_Panel;
 import MeiDOTAnaka.GUI_Components.CurrentGame.CurrentGame_Panel;
 import MeiDOTAnaka.GUI_Components.Graphs.Graphs_Panel;
 import MeiDOTAnaka.GUI_Components.Items.Items_Panel;
@@ -24,6 +25,7 @@ public class State_Panel extends JPanel {
     public JPanel current_panel;
 
     public GridBagConstraints gridBagConstraints;
+    public CringeList_Panel cringeList_panel;
 
     private MeiDOTAnakaFrrame_m meiDOTAnakaFrrame_m;
 
@@ -34,14 +36,16 @@ public class State_Panel extends JPanel {
         setLayout(new GridBagLayout());
         setBackground(Color.BLACK);
 
+        selected_panel = new Selected_Panel();
+
         config_panel = new Config_Panel(meiDOTAnakaFrrame_m);
         postGame_panel = new PostGame_Panel();
         players_panel = new Players_Panel();
         graphs_panel = new Graphs_Panel();
         currentGame_panel = new CurrentGame_Panel();
         items_panel = new Items_Panel();
+        cringeList_panel = new CringeList_Panel();
 
-        selected_panel = new Selected_Panel();
 
         gridBagConstraints.anchor = GridBagConstraints.PAGE_START;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
