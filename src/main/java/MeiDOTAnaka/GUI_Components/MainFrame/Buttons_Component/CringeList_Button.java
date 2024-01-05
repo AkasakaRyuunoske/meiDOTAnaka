@@ -39,8 +39,8 @@ public class CringeList_Button extends JButton implements ActionListener, MeiDOT
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == this) {
-            System.out.println("cringe list was called");
             switchPanel();
+            state_panel.selected_panel.selectedLabel.setText("<HTML><FONT color=\"#000099\"><h1>Cringe List</h1></FONT>");
         }
     }
 

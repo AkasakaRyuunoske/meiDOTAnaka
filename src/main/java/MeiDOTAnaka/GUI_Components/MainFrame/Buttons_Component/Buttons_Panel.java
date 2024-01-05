@@ -65,5 +65,6 @@ public class Buttons_Panel extends JPanel {
         items_button.setContext      (context_frame, context_panel, state_panel);
         postGame_button.setContext   (context_frame, context_panel, state_panel);
         items_button.setContext      (context_frame, context_panel, state_panel);
+        cringeList_button.setContext (context_frame, context_panel, state_panel);
     }
 }
