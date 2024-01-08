@@ -38,9 +38,6 @@ public class Buttons_Panel extends JPanel {
         add(cringeList_button);
         add(ooPingButton);
 
-        // placeholders for if I decide to put more elements here. For now they just separate buttons from user info
-//        add(new JLabel());
-
         JLabel yellow_part = new JLabel();
         JLabel blue_part = new JLabel();
 
